@@ -1,0 +1,7 @@
+SELECT ?a ?name ?cookTime ?keywords
+WHERE {
+ ?a a schema:Recipe ;
+    schema:name ?name;
+    schema:cookTime ?cookTime;
+    schema:keywords ?keywords.
+}
