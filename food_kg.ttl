@@ -1,0 +1,1899 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+
+# Recipe as an OWL Class
+schema:Recipe a owl:Class ;
+    rdfs:label "Recipe"@en ;
+    rdfs:comment "A recipe is a set of instructions that describes how to prepare or make something, especially a culinary dish."@en ;
+    rdfs:subClassOf schema:CreativeWork .
+
+schema:recipeIngredient a owl:ObjectProperty ;
+    rdfs:label "recipeIngredient"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .    
+
+# Define relevant properties with domain and range
+schema:name a owl:DatatypeProperty ;
+    rdfs:label "name"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:cookTime a owl:DatatypeProperty ;
+    rdfs:label "cookTime"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:duration .
+
+schema:prepTime a owl:DatatypeProperty ;
+    rdfs:label "prepTime"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:duration .
+
+schema:recipeCategory a owl:DatatypeProperty ;
+    rdfs:label "recipeCategory"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:recipeInstructions a owl:DatatypeProperty ;
+    rdfs:label "recipeInstructions"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:NutritionInformation a owl:Class ;
+    rdfs:label "Nutrition Information"@en ;
+    rdfs:comment "Nutritional information about a recipe, including calories, fat, protein, and carbohydrates."@en .
+
+schema:nutrition a owl:ObjectProperty ;
+    rdfs:label "nutrition"@en ;
+    rdfs:comment "Nutritional information for a recipe."@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range schema:NutritionInformation .
+
+schema:calories a owl:DatatypeProperty ;
+    rdfs:label "calories"@en ;
+    rdfs:comment "Total energy provided by the recipe in kcal."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:fatContent a owl:DatatypeProperty ;
+    rdfs:label "fatContent"@en ;
+    rdfs:comment "Amount of fat in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:saturatedFatContent a owl:DatatypeProperty ;
+    rdfs:label "saturatedFatContent"@en ;
+    rdfs:comment "Amount of saturated fat in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:cholesterolContent a owl:DatatypeProperty ;
+    rdfs:label "cholesterolContent"@en ;
+    rdfs:comment "Amount of cholesterol in milligrams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:sodiumContent a owl:DatatypeProperty ;
+    rdfs:label "sodiumContent"@en ;
+    rdfs:comment "Amount of sodium in milligrams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:carbohydrateContent a owl:DatatypeProperty ;
+    rdfs:label "carbohydrateContent"@en ;
+    rdfs:comment "Amount of carbohydrates in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:fiberContent a owl:DatatypeProperty ;
+    rdfs:label "fiberContent"@en ;
+    rdfs:comment "Amount of fiber in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:sugarContent a owl:DatatypeProperty ;
+    rdfs:label "sugarContent"@en ;
+    rdfs:comment "Amount of sugar in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:proteinContent a owl:DatatypeProperty ;
+    rdfs:label "proteinContent"@en ;
+    rdfs:comment "Amount of protein in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+dbo:Nutrition a owl:Class ;
+    rdfs:label "Nutrition"@en ;
+    rdfs:comment "Nutrition-related information such as calories, fat content, and protein."@en .
+
+<http://kg-course/food-nutrition/recipe/100573> a schema:Recipe ;
+    schema:cookTime "PT8M"^^xsd:duration ;
+    schema:datePublished "2004-09-24T19:59:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 15 Mins"@en,
+        "Cookie & Brownie"@en,
+        "Easy"@en,
+        "Fruit"@en,
+        "Nuts"@en ;
+    schema:name "Butter Pecan Cookies"@en ;
+    schema:prepTime "PT5M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 egg"@en,
+        "1 pecans"@en,
+        "1 vanilla instant pudding mix"@en ;
+    schema:recipeInstructions "Bake for 8 minutes."@en,
+        "Cool on cookie sheets for 5 minutes and remove to a wire rack."@en,
+        "In a large bowl mix all ingredients together until well mixed."@en,
+        "Lightly spray cookie sheets with cooking spray."@en,
+        "Preheat oven to 375 degrees."@en,
+        "Roll into small balls about the size of walnuts."@en .
+
+<http://kg-course/food-nutrition/recipe/121241> a schema:Recipe ;
+    schema:cookTime "PT10M"^^xsd:duration ;
+    schema:datePublished "2005-05-09T20:00:00+00:00"^^xsd:dateTime ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/12/41/picKI7clC.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/12/41/picmyZGrp.jpg> ;
+    schema:keywords "< 30 Mins"@en,
+        "Beginner Cook"@en,
+        "Cookie & Brownie"@en,
+        "Dessert"@en,
+        "Easy"@en,
+        "Fruit"@en,
+        "Nuts"@en ;
+    schema:name "Butter Pecan Cookies"@en ;
+    schema:prepTime "PT10M"^^xsd:duration ;
+    schema:recipeCategory "Drop Cookies"@en ;
+    schema:recipeIngredient "1 eggs"@en,
+        "1 margarine"@en,
+        "1/2 butter"@en,
+        "2 vanilla extract"@en,
+        "6 -8 pecans"@en ;
+    schema:recipeInstructions "Bake at 350 degrees F for about 10 minutes."@en,
+        "Cream cake mix, eggs, vanilla and margarine together with mixer."@en,
+        "Drop onto greased or parchment-lined cookie sheet."@en,
+        "Let cool for 2-3 minutes."@en,
+        "Stir in brickle chips and pecans."@en,
+        "Transfer cookies to cooling rack."@en .
+
+<http://kg-course/food-nutrition/recipe/142426> a schema:Recipe ;
+    schema:cookTime "PT15M"^^xsd:duration ;
+    schema:datePublished "2005-10-23T19:42:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 30 Mins"@en,
+        "Cookie & Brownie"@en,
+        "Dessert"@en,
+        "Easy"@en,
+        "Egg Free"@en,
+        "Free Of..."@en,
+        "Fruit"@en,
+        "Grains"@en,
+        "Nuts"@en,
+        "Oven"@en,
+        "Potluck"@en,
+        "Sweet"@en ;
+    schema:name "Butter Pecan Cookies"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Drop Cookies"@en ;
+    schema:recipeIngredient "1 flour"@en,
+        "1 vanilla extract"@en,
+        "1/2 unsalted butter"@en,
+        "1/3 sugar"@en,
+        "1/8 salt"@en,
+        "3/4 pecans"@en ;
+    schema:recipeInstructions "Bake until golden brown, about 15 minutes."@en,
+        "Beat in vanilla, salt, and flour, just until dough comes together."@en,
+        "Cool cookies on a wire rack."@en,
+        "Cream butter and 1/3 cup sugar until light, about 1 minute."@en,
+        "Fold in pecans."@en,
+        "On a baking sheet, toast pecans until fragrant, about 6 minutes. Let cool completely; finely chop."@en,
+        "Place, 3 inches apart, on a baking sheet. Gently flatten with the bottom of a glass. Sprinkle with sugar."@en,
+        "Preheat oven to 350°."@en,
+        "Separate dough into 12 pieces; squeeze dough to shape into balls. Roll in sugar."@en,
+        "Sprinkle with more sugar."@en ;
+    schema:recipeYield "12.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/148683> a schema:Recipe ;
+    schema:cookTime "PT2H"^^xsd:duration ;
+    schema:datePublished "2005-12-18T18:42:00+00:00"^^xsd:dateTime ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "P0D"^^xsd:duration ;
+    schema:recipeCategory "< 4 Hours"@en ;
+    schema:recipeIngredient "1 diced tomatoes"@en,
+        "1 green pepper"@en,
+        "1 lean ground beef"@en,
+        "1 onion"@en,
+        "1 salt"@en,
+        "1 tomato juice"@en,
+        "2 carrots"@en,
+        "2 pepper"@en,
+        "4 cabbage"@en ;
+    schema:recipeInstructions "Brown the meat in a large soup pot sprayed with non-stick spray."@en,
+        "Cook for at least 2 hours."@en,
+        "Pour off all of the fat and add all of the other ingredients."@en,
+        "This makes a very concentrated soup and can be frozen in plastic containers."@en,
+        "When reheating, add 3/4 c water or bouillon per serving."@en .
+
+<http://kg-course/food-nutrition/recipe/162371> a schema:Recipe ;
+    schema:cookTime "nan"^^xsd:duration ;
+    schema:datePublished "2006-03-31T10:27:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 30 Mins"@en,
+        "Dessert"@en,
+        "Healthy"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "Pie"@en ;
+    schema:recipeInstructions "Bake in deep cake pan."@en,
+        "Beat egg whites till stuff - add and beat egg yolks. Add sugar, water, and sifted flour with baking powder. Add vinegar."@en,
+        "Beat one egg and add to mixture. Add cup hot milk. Cook in double boiler. Flavor with lemon."@en,
+        "Cream filling: Moisten with little water."@en,
+        "Split and fill with cream (custard] filling. Whipped cream may be added on top or else sugar may be sprinkled over it."@en .
+
+<http://kg-course/food-nutrition/recipe/204921> a schema:Recipe ;
+    schema:cookTime "PT1H"^^xsd:duration ;
+    schema:datePublished "2007-01-11T19:59:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Easy"@en,
+        "Egg Free"@en,
+        "Free Of..."@en,
+        "Healthy"@en,
+        "Lactose Free"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en,
+        "Vegetable"@en,
+        "Very Low Carbs"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Lunch/Snacks"@en ;
+    schema:recipeInstructions "Mix everything together and bring to a boil."@en,
+        "Serve warm or cold."@en,
+        "Turn heat down and simmer until veggies are soft."@en ;
+    schema:recipeYield "12.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/213018> a schema:Recipe ;
+    schema:cookTime "PT20M"^^xsd:duration ;
+    schema:datePublished "2007-02-22T16:55:00+00:00"^^xsd:dateTime ;
+    schema:keywords "\"Inexpensive\""@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT5M"^^xsd:duration ;
+    schema:recipeCategory "< 30 Mins"@en ;
+    schema:recipeIngredient "1 cabbage"@en,
+        "1 turnip"@en,
+        "1/2 pepper"@en,
+        "1/4 sour cream"@en,
+        "2 salt"@en,
+        "4 butter"@en,
+        "4 onion"@en ;
+    schema:recipeInstructions "Add onion and saute until translucent."@en,
+        "Add shredded turnip and cabbage and heat for 3 minutes, stirring constantly."@en,
+        "Add soup stock and seasonings."@en,
+        "Bring to a boil."@en,
+        "Melt butter in pan."@en,
+        "Reduce heat."@en,
+        "Serve hot, float a spponful of sour cream and a dash of paprika on top if desired."@en,
+        "Simmer 15 minutes."@en .
+
+<http://kg-course/food-nutrition/recipe/235499> a schema:Recipe ;
+    schema:cookTime "PT1H30M"^^xsd:duration ;
+    schema:datePublished "2007-06-19T20:05:00+00:00"^^xsd:dateTime ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/23/54/99/pCuBpWDxRO2lhWVlnppC_Boston%20Cream%20Pie_0015.JPG>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/23/54/99/pictypG3W.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/23/54/99/reKzVzGrQ4GAwwrr7EXs_Boston%20Cream%20Pie_0157.JPG> ;
+    schema:keywords "< 4 Hours"@en,
+        "For Large Groups"@en,
+        "Kid Friendly"@en,
+        "Oven"@en,
+        "Sweet"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT25M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/2 bittersweet chocolate"@en,
+        "1 1/2 sugar"@en,
+        "1 milk"@en,
+        "1 vanilla"@en,
+        "1 vanilla pudding mix"@en,
+        "1/2 butter"@en,
+        "1/4 salt"@en,
+        "2 1/4 flour"@en,
+        "2 baking powder"@en,
+        "2 light corn syrup"@en,
+        "3/4 butter"@en,
+        "4 eggs"@en ;
+    schema:recipeInstructions "Add eggs, 1 at a time, beating well after each."@en,
+        "Assemble: Stir or whisk custard until smooth."@en,
+        "Bake 25 minutes or until a pick inserted in centers comes out clean."@en,
+        "Cake: Beat butter, sugar, vanilla, baking powder and salt in a large bowl with mixer on medium speed 3 minutes or until fluffy."@en,
+        "Chill 30 minutes or until thickened."@en,
+        "Cook over medium heat, stirring, until mixture comes to a boil."@en,
+        "Cool in pans on rack 10 minutes, invert, remove paper and cool completely."@en,
+        "Divide between prepared pans."@en,
+        "Heat oven to 350 degrees."@en,
+        "Let stand 15 minutes at room temperature until glaze is just set or refrigerate until serving, then let stand at room temperature about 20 minutes before serving."@en,
+        "Line bottoms with wax paper, spray paper."@en,
+        "Meanwhile, make filling: In medium saucepan, whisk egg yolk and milk into pudding mix."@en,
+        "Meanwhile, make glaze: Stir glaze ingredients in small saucepan over low heat just until chocolate melts and mixture is smooth."@en,
+        "On low speed, beat in flour in 3 additions alternating with milk in 2 additions, just until blended."@en,
+        "Place one cake layer on serving plate; spread custard over top."@en,
+        "Pour into a bowl; place plastic wrap directly onto custard surface."@en,
+        "Refrigerate."@en,
+        "Spread glaze over top of cake, allowing some to drip down sides."@en,
+        "Top with remaining cake layer, rounded side up."@en,
+        "You'll need two 9x2 inch round cake pans coated with nonstick spray."@en ;
+    schema:recipeYield "16.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/237567> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "2007-06-27T22:31:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Easy"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/2 baking powder"@en,
+        "1 1/2 milk"@en,
+        "1 1/4 flour"@en,
+        "1 egg"@en,
+        "1 sugar"@en,
+        "1 vanilla"@en,
+        "1/2 light corn syrup"@en,
+        "1/2 salt"@en,
+        "1/3 shortening"@en,
+        "1/3 sugar"@en,
+        "1/8 salt"@en,
+        "2 cornstarch"@en,
+        "2 margarine"@en,
+        "2 vanilla"@en,
+        "3/4 milk"@en ;
+    schema:recipeInstructions "Bake until wooden pick"@en,
+        "Beat all the ingredients except the Cream Filling and Chocolate Glaze in large"@en,
+        "Blend into hot mixture in saucepan; boil and stir 1 minute."@en,
+        "Cake:."@en,
+        "Chocolate Glaze:."@en,
+        "Cook over medium heat, stirring constantly, until mixture thickens and boils; boil and"@en,
+        "Cream Filling:"@en,
+        "Fill with the Cream Filling on the bottom layer of the cake.  Cover with top the layer of cake.  Spread the top of the cake with the Chocolate Glaze."@en,
+        "Heat chocolate chips, margarine or butter and light corn syrup in 1 quart saucepan over low heat, stirring constantly"@en,
+        "Mix sugar, cornstarch and salt in 2 quart saucepan; stir in milk gradually."@en,
+        "Pour into pan."@en,
+        "Preheat oven to 350 degrees.  Grease and flour a round pan 9 x 1-1/2 inches."@en,
+        "Refrigerate cake."@en,
+        "Remove from heat; stir in vanilla.  Cool to room temperature."@en,
+        "Remove from pan and cool"@en,
+        "Split cake into 2 layers."@en,
+        "Stir at least half of the hot mixture gradually into egg yolks."@en,
+        "bowl on low speed, scraping bowl constantly, 30 seconds.  Beat on high speed,"@en,
+        "completely."@en,
+        "inserted in center comes out clean, 30-35 minutes."@en,
+        "scraping bowl occasionally, 3 minutes."@en,
+        "stir 1 minutes."@en,
+        "until chips melt; cool slightly."@en .
+
+<http://kg-course/food-nutrition/recipe/241266> a schema:Recipe ;
+    schema:cookTime "PT1M"^^xsd:duration ;
+    schema:datePublished "2007-07-18T16:39:00+00:00"^^xsd:dateTime ;
+    schema:keywords "\"< 15 Mins\""@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT1M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/2 baking powder"@en,
+        "1 flour"@en,
+        "1 skim milk"@en,
+        "1/2 skim milk"@en,
+        "1/2 unsalted butter"@en,
+        "1/4 granulated sugar"@en,
+        "1/4 salt"@en,
+        "1/4 vanilla"@en,
+        "2 cornstarch"@en,
+        "2 cream of tartar"@en,
+        "2 flour"@en,
+        "2 vanilla bean"@en,
+        "2/3 sugar"@en,
+        "6 heavy cream"@en ;
+    schema:recipeInstructions "Ganache: In a medium bowl, pour the boiling cream over the chopped chocolate and stir until melted."@en,
+        "In a large mixing bowl, beat egg whites and cream of tartar on medium to high speed until soft peaks form. Pour the egg yolk mixture over the egg white mixture and fold together. Gently pour the batter into a 9-inch greased pie pan. Bake for 25 to 30 minutes or until the top springs back when lightly touched. Invert the pan onto a wire rack. Cool completely."@en,
+        "In a medium mixing bowl combine flour, sugar, baking powder, and salt. Make a well in the center of the flour mixture. Add milk, oil, egg yolks, and vanilla. Beat with an electric mixer on low to medium speed until combined. Beat an additional 3 minutes on high speed and set aside."@en,
+        "Pastry Cream Filling: In a medium saucepan, heat the milk and vanilla bean to a boil over medium heat. Immediately turn off the heat and set aside to infuse for 10 to 15 minutes. In a bowl, whisk the egg yolks and granulated sugar until light and fluffy. Add the cornstarch and whisk vigorously until no lumps remain. Whisk in 1/4 cup of the hot milk mixture until incorporated. Whisk in the remaining hot milk mixture, reserving the empty saucepan."@en,
+        "Pour the mixture through a strainer back into the saucepan. Cook over medium-high heat, whisking constantly, until thickened and slowly boiling. Remove from the heat and stir in the butter. Let cool slightly. Cover with plastic wrap, lightly pressing the plastic against the surface to prevent a skin from forming. Chill at least 2 hours or until ready to serve. (The custard can be made up to 24 hours in advance. Refrigerate until 1 hour before using.]"@en,
+        "Preheat oven to 350°F."@en,
+        "To assemble pie, remove the cake from the pan. Cut the cake in half horizontally. Place bottom layer on a serving plate or board, and spread with the pastry cream. Top with second cake layer. Pour chocolate ganache over and down the sides of the cake. Store in refrigerator."@en ;
+    schema:recipeYield "12.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/241886> a schema:Recipe ;
+    schema:cookTime "PT45M"^^xsd:duration ;
+    schema:datePublished "2007-07-23T21:29:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Easy"@en,
+        "Healthy"@en,
+        "Kosher"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Vegetable"@en ;
+    schema:recipeInstructions "\"Combine ingredients and cook until all veggies are soft.\""@en ;
+    schema:recipeYield "12.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/242430> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "2007-07-25T20:50:00+00:00"^^xsd:dateTime ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/24/30/pic2dC9Ib.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/24/30/picF7lTGi.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/24/30/picIxzLo1.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/24/30/picUbS706.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/24/30/picboNpPx.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/24/30/picbxLrVf.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/24/24/30/pictHW3St.jpg> ;
+    schema:keywords "< 60 Mins"@en,
+        "Beginner Cook"@en,
+        "Easy"@en,
+        "Egg Free"@en,
+        "Free Of..."@en,
+        "Healthy"@en,
+        "Lactose Free"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en,
+        "Vegetable"@en,
+        "Very Low Carbs"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT10M"^^xsd:duration ;
+    schema:recipeCategory "Clear Soup"@en ;
+    schema:recipeInstructions "Add the cabbage and carrots."@en,
+        "Cut the cabbage and carrots finely in strips."@en,
+        "Heat the chicken broth in a large casserole."@en,
+        "I tried with red cabbage and I won't do it again cause the color is not inviting."@en,
+        "Let boil 20 to 25 minutes."@en,
+        "You can add seasonning to your own taste."@en .
+
+<http://kg-course/food-nutrition/recipe/244649> a schema:Recipe ;
+    schema:cookTime "PT25M"^^xsd:duration ;
+    schema:datePublished "2007-08-06T15:47:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Easy"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/4 milk"@en,
+        "1 heavy whipping cream"@en,
+        "1 sugar"@en,
+        "1/2 all-purpose flour"@en,
+        "1/2 pure vanilla extract"@en,
+        "1/3 sugar"@en,
+        "1/4 all-purpose flour"@en,
+        "1/8 cornstarch"@en,
+        "2 all-purpose flour"@en,
+        "2 unsalted butter"@en,
+        "3 eggs"@en,
+        "3 granulated sugar"@en,
+        "3 vanilla extract"@en ;
+    schema:recipeInstructions "Beat the eggs and sugar on high speed for about five minutes, or until they are thick, fluffy and light colored, at this point beat in the vanilla extract."@en,
+        "Bring the cream just to a boil in a saucepan over medium heat. Immediately pour the boiling cream over the chocolate and allow to stand for a 3-5 minutes."@en,
+        "Chocolate Glaze: Place the chopped chocolate in a small heatproof bowl. Set aside."@en,
+        "Let the cream cool in the refrigerator for a few hours."@en,
+        "Meanwhile in a saucepan bring the milk to boiling over medium heat.  Remove from heat and add slowly to the egg mixture, whisking constantly to prevent curdling."@en,
+        "Pastry Cream: In a medium-sized stainless steel bowl, mix the sugar and egg yolks. Sift the flour and cornstarch together and then add to the egg mixture, mixing until you get a smooth paste. Set aside."@en,
+        "Place the bottom half on your serving plate, cut side up."@en,
+        "Place the egg mixture back into a medium saucepan and cook over medium heat until boiling, whisking constantly."@en,
+        "Place the top half of the cake (cut side down] onto the filling."@en,
+        "Pour immediately into the prepared pan and bake for about 25 minutes or until springy to the touch."@en,
+        "Pour into a clean bowl and immediately cover the surface with plastic wrap to prevent a crust from forming."@en,
+        "Pour or spoon the pastry cream onto the cake, spreading to make an even layer."@en,
+        "Pour the glaze onto the center of the cake and carefully spread the glaze, with a spatula, to the edges of the cake."@en,
+        "Refrigerate a few hours before serving to allow the glaze to set and flavors to mingle."@en,
+        "Remove from heat and whisk in the vanilla extract."@en,
+        "Remove from oven and place on a wire rack to cool."@en,
+        "Remove the top half and set it aside."@en,
+        "Run a spatula or sharp knife around the inside of the pan and then invert the cake onto a wire rack. Remove parchment paper."@en,
+        "Sift 1/2 of the flour over the batter and gently fold through with a rubber spatula."@en,
+        "Sift the remaining flour over the batter and fold together."@en,
+        "Sponge Cake: Preheat oven to 350°F  Butter and line the bottom of an 8 inch cake pan with parchment paper."@en,
+        "Stir until smooth. Set aside for a few minutes until it has thickened to pouring consistency."@en,
+        "To Assemble: With a serrated knife slice the cake in half horizontally."@en,
+        "When it boils, continue to whisk constantly for another 30 - 60 seconds until it becomes thick."@en,
+        "Whisk about 1/2 cup of the batter into the melted butter and then gently fold the butter mixture back into the rest of the batter."@en ;
+    schema:recipeYield "10.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/245931> a schema:Recipe ;
+    schema:cookTime "PT12M"^^xsd:duration ;
+    schema:datePublished "2007-08-12T21:11:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Christmas"@en,
+        "Cookie & Brownie"@en,
+        "Easy"@en ;
+    schema:name "Butter Pecan Cookies"@en ;
+    schema:prepTime "PT1H20M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 3/4 pecans"@en,
+        "1 brown sugar"@en,
+        "1 butter"@en,
+        "1 egg"@en,
+        "1 vanilla"@en,
+        "2 self-rising flour"@en ;
+    schema:recipeInstructions "Bake at 325 for 5-7 minutes or until toasted, stirring frequently."@en,
+        "Bake at 375 for 10-12 minutes until golden brown."@en,
+        "Beat egg white until foamy."@en,
+        "Cool on sheets for 2 minutes and remove to wire racks to cool completely."@en,
+        "Cover and refridgerate for one hour."@en,
+        "Cream 1 cup butter, sugar, egg yolk and vanilla in bowl of mixer."@en,
+        "Dip pecan halves in egg white then gehtly press one into each dough ball."@en,
+        "Gradually mix flour into creamed mixture."@en,
+        "Place 2 inches apart on ungreased cookie sheets."@en,
+        "Place chopped pecans and 1 TBL butter in a baking dish."@en,
+        "Roll balls into toasted pecans, pressing nuts into dough."@en,
+        "Roll into one inch balls."@en,
+        "Set aside to cool."@en,
+        "To make Self-Rising flour add 1 1/2  teaspoons baking powder and 1/2 tsp salt to each cup then add all-purpose flour to make a full cup."@en .
+
+<http://kg-course/food-nutrition/recipe/262155> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "2007-10-30T00:21:00+00:00"^^xsd:dateTime ;
+    schema:keywords "\"< 60 Mins\""@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 all-purpose flour"@en,
+        "1 butter"@en,
+        "1 milk"@en,
+        "1 salt"@en,
+        "1 vanilla"@en,
+        "1/2 egg"@en,
+        "1/2 margarine"@en,
+        "1/3 butter"@en,
+        "1/3 salt"@en,
+        "1/4 baking powder"@en,
+        "1/4 granulated sugar"@en,
+        "1/4 milk"@en,
+        "1/8 all-purpose flour"@en,
+        "2 eggs"@en,
+        "2 icing sugar"@en,
+        "3/4 granulated sugar"@en,
+        "4 margarine"@en ;
+    schema:recipeInstructions "Add flour, baking powder and salt.  Stir."@en,
+        "Add milk.  Stir and pour into 1 greased 8-inch round layer pan.  Bake in oven for about 25 to 30 minutes until an inserted wooden pick comes out clean.  Cool.  Cut cake to make 2 layers.  Spread Custard Filling between layers."@en,
+        "Company’s Coming."@en,
+        "FOR THE CAKE:  Preheat oven to 350°F  Beat eggs in mixing bowl until thick.  Beat in sugar, butter and vanilla."@en,
+        "FOR THE CHOCOLATE GLAZE:  Beat all 4 ingredients together in small bowl.  Add more water if needed to make a barely pourable glaze.  Spread over top of cake.  Allow some to drizzle down sides a bit.  Chill.  Serve with or without whipped cream."@en,
+        "FOR THE CUSTARD FILLING:  Bring milk to a boil in medium saucepan."@en,
+        "Meanwhile mix sugar, flour and salt together thoroughly.  Add egg and vanilla.  Mix well.  Stir into boiling milk to thicken.  remove from heat.  Cool.  Setting pan in ice water helps to cool quicker.   Stir often.  Spread between layers.  Apply Chocolate Glaze."@en,
+        "NOTE:  a regular 2 layer cake may be used, your own or a mix.  Being large it will give more cake per serving."@en .
+
+<http://kg-course/food-nutrition/recipe/280584> a schema:Recipe ;
+    schema:cookTime "nan"^^xsd:duration ;
+    schema:datePublished "2008-01-22T22:09:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 30 Mins"@en,
+        "Easy"@en,
+        "Healthy"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Low Cholesterol"@en ;
+    schema:recipeIngredient "1 bay leaf"@en,
+        "1 cabbage"@en,
+        "1 hamburger meat"@en,
+        "1 onion"@en,
+        "2 stewed tomatoes"@en ;
+    schema:recipeInstructions "\"Cook meat and onion in a pan.  Drain and add to tomatoes and chopped cabbage.  Cook rice and add to the pot.  Add bay leaf and salt and pepper to taste.  Cook till heated through.\""@en .
+
+<http://kg-course/food-nutrition/recipe/295900> a schema:Recipe ;
+    schema:cookTime "PT15M"^^xsd:duration ;
+    schema:datePublished "2008-04-02T01:33:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 30 Mins"@en,
+        "Free Of..."@en,
+        "Greens"@en,
+        "Onions"@en,
+        "Savory"@en,
+        "Vegetable"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT10M"^^xsd:duration ;
+    schema:recipeCategory "Clear Soup"@en ;
+    schema:recipeIngredient "1 cabbage"@en,
+        "1 oregano"@en,
+        "1/2 garlic clove"@en,
+        "1/4 celery"@en,
+        "2 carrots"@en,
+        "2 zucchini"@en,
+        "2/3 onions"@en,
+        "3 basil"@en ;
+    schema:recipeInstructions "Add broth, cabbage, basil, oregano, and celery; bring to a boil."@en,
+        "Add zucchini; simmer for an additional 5 minutes."@en,
+        "Cook onion, carrots, and garlic in a pot for 3 minutes."@en,
+        "Enjoy!"@en,
+        "Reduce heat and simmer for 5 minutes."@en ;
+    schema:recipeYield "1.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/305119> a schema:Recipe ;
+    schema:cookTime "PT10M"^^xsd:duration ;
+    schema:datePublished "2008-05-27T23:25:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 30 Mins"@en,
+        "Cookie & Brownie"@en ;
+    schema:name "Butter Pecan Cookies"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 butter"@en,
+        "1 egg"@en,
+        "1 pecans"@en,
+        "1 vanilla"@en,
+        "1/2 salt"@en,
+        "2 1/2 flour"@en,
+        "2 baking powder"@en,
+        "3/4 sugar"@en ;
+    schema:recipeInstructions "Add egg."@en,
+        "Add flour, salt, baking powder and pecans."@en,
+        "Bake at 400 for 8 minutes or until nice and light brown."@en,
+        "Chill dough 1 hour."@en,
+        "Cream butter and sugar."@en,
+        "Mix in vanilla."@en,
+        "Roll out 1/8 inch thick and cut with any size cutter."@en .
+
+<http://kg-course/food-nutrition/recipe/314970> a schema:Recipe ;
+    schema:cookTime "PT10M"^^xsd:duration ;
+    schema:datePublished "2008-07-22T02:03:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 30 Mins"@en,
+        "Cookie & Brownie"@en,
+        "Easy"@en ;
+    schema:name "Butter Pecan Cookies"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/4 all-purpose flour"@en,
+        "1/2 pecans"@en,
+        "3 1/2 butterscotch pudding mix"@en,
+        "3/4 butter"@en ;
+    schema:recipeInstructions "Bake at 375 degrees for 10-13 minutes or until light golden brown."@en,
+        "Ceam butter and pudding mix.  Gradually beat in flour.  FOld in pecans.  Roll into 1 1/2\" balls."@en,
+        "Place 2\" apart on greased baking sheets; flatten to 1/2\" with greased glass."@en,
+        "Remove to wire racks."@en .
+
+<http://kg-course/food-nutrition/recipe/318443> a schema:Recipe ;
+    schema:cookTime "PT40M"^^xsd:duration ;
+    schema:datePublished "2008-08-08T15:33:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Beginner Cook"@en,
+        "Easy"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT5M"^^xsd:duration ;
+    schema:recipeCategory "Stocks"@en ;
+    schema:recipeInstructions "Combine all vegetables except salt and pepper into a slow cooker or soup pot."@en,
+        "Cover with chicken broth. If using a slow cooker, cook on high for 4-5 hours or low for 7-8 hours."@en,
+        "If using a pot, bring contents to a boil, reduce heat and simmer on low to medium for at least 30-40 minutes. Add salt and pepper to taste as soup cooks."@en,
+        "Season with oregano and basil to taste."@en .
+
+<http://kg-course/food-nutrition/recipe/321461> a schema:Recipe ;
+    schema:cookTime "PT20M"^^xsd:duration ;
+    schema:datePublished "2008-08-26T00:54:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Dessert"@en,
+        "Healthy"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "Pie"@en ;
+    schema:recipeInstructions "Add 1 egg and beat until blended."@en,
+        "Add the egg, milk, and salt. Cook over low heat, stirring constantly, until the filling is smooth and thick."@en,
+        "Add to the creamed mixture alternately with the milk."@en,
+        "Bake for 20 minutes or until a tester inserted near the center of the cake comes out clean. Cool in the pans for 10 minutes, then turn out onto wire racks to finish cooling."@en,
+        "Cream the shortening with the 1 cup sugar."@en,
+        "Grease and flour two 8-inch round cake pans."@en,
+        "Preheat the oven to 350 degrees F."@en,
+        "Sift the 1-3/4 cups flour together with the baking powder and 1/8 teaspoon salt."@en,
+        "Stir in the vanilla. Chill in the refrigerator."@en,
+        "Stir in the vanilla. Divide the batter between the cake tins."@en,
+        "To assemble, spread the filling between the cooled cake layers and top with the frosting."@en,
+        "To make the filling, combine the flour with the sugar in a small saucepan."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/323316> a schema:Recipe ;
+    schema:cookTime "PT40M"^^xsd:duration ;
+    schema:datePublished "2008-09-04T21:53:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Oven"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 confectioners' sugar"@en,
+        "1 cornstarch"@en,
+        "1 cream cheese"@en,
+        "1 flour"@en,
+        "1 lemon, zest of"@en,
+        "1 sugar"@en,
+        "1 vanilla"@en,
+        "1/4 butter"@en,
+        "2 milk"@en,
+        "4 eggs"@en,
+        "4 flour"@en ;
+    schema:recipeInstructions "Beat eggs and sugar together in top of a double boiler until light and fluffy. Transfer to bowl of stand mixer; beat at medium until cool. Add lemon zest, vanilla and butter. Add flour 1/3 cup at a time, beating until well mixed. Pour into prepared pans and bake 40 min or until a toothpick inserted in the center comes out clean."@en,
+        "Chop chocolate coarsely and place in a microwave safe bowl. Microwave chocolate at 50% (medium] in 30 second increments, stirring after each, until fully melted. Beat cream cheese in mixer at medium speed until soft; reduce speed to low and add confectioner's sugar and chocolate. Beat until smooth, glossy and fully mixed. Spread topping over the top of the cake - do not frost sides. Keep refrigerated until ready to serve."@en,
+        "Meanwhile, heat milk in a saucepan. In a bowl, beat sugar, egg yolks, flour and cornstarch. Add hot milk a few spoonfuls at a time, beating constantly, until about 1/3 of it has been added, after which the contents of the bowl can be added to the saucepan with the vanilla. Cook over medium-low heat until thickened, stirring constantly. Transfer to a bowl, cover with plastic wrap, and refrigerate until cold."@en,
+        "Preheat oven to 350°F Butter and flour 2 9\" cake pans."@en,
+        "Trim cake layers so they are level. Pour filling on bottom layer, and position top layer over the filling."@en ;
+    schema:recipeYield "12.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/323652> a schema:Recipe ;
+    schema:cookTime "PT1H"^^xsd:duration ;
+    schema:datePublished "2008-09-06T10:34:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Beginner Cook"@en,
+        "Dessert"@en,
+        "Easy"@en,
+        "Potluck"@en,
+        "Refrigerator"@en,
+        "Sweet"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Pie"@en ;
+    schema:recipeIngredient "1 1/2 baker's unsweetened chocolate square"@en,
+        "1 Cool Whip Topping"@en,
+        "1 butter"@en,
+        "1 milk"@en,
+        "1 powdered sugar"@en,
+        "1 vanilla flavor instant pudding and pie filling mix"@en,
+        "3/4 milk"@en ;
+    schema:recipeInstructions "Cut cake into 2 layers with serrated knife.  Beat 1 cup milk and pudding mix with whisk 2 minutes.  Stir in whipped topping.  Let stand 5 minutes."@en,
+        "Microwave chocolate and butter on high for 1 minute.  Stir until chocolate is melted.  Add sugar and 2 tablespoons milk; mix well.  Spread over cake.  Refrigerate 1 hour.  Refrigerate leftovers -- if there are any!"@en,
+        "Stack cake layers on serving plate, spreading pudding mixture between layers."@en ;
+    schema:recipeYield "10.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/323867> a schema:Recipe ;
+    schema:cookTime "PT1H"^^xsd:duration ;
+    schema:datePublished "2008-09-08T01:12:00+00:00"^^xsd:dateTime ;
+    schema:keywords "\"< 4 Hours\""@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT45M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/2 salt"@en,
+        "1 1/2 unsalted butter"@en,
+        "1 1/4 baking powder"@en,
+        "1 cake flour"@en,
+        "1 cornstarch"@en,
+        "1 sugar"@en,
+        "1/2 butter"@en,
+        "1/2 corn syrup"@en,
+        "1/2 dark chocolate"@en,
+        "1/2 milk"@en,
+        "1/4 heavy cream"@en,
+        "1/4 milk"@en,
+        "2 eggs"@en,
+        "2 vanilla"@en,
+        "3 salt"@en,
+        "3/4 vanilla bean"@en ;
+    schema:recipeInstructions "Beat the butter and sugar together at medium-high speed until fluffy.  Beat in the eggs and yolks one at a time.  Add the vanilla extract."@en,
+        "Make the Pudding while the cake is cooking:  Heat the milk, cream and vanilla bean (with the seeds scraped into the milk] until just simmering in a heavy bottomed medium pot."@en,
+        "Stir the cake flour, baking powder, and salt together using a whisk.  Reduce mixer speed to low and beat the flour mixture into the butter-egg mixture, adding it in thirds and alternating with the milk.  Beat until the batter is smooth."@en,
+        "To Assemble:  Splite the unmolded cake, to make two layers, using a serrated knife.  Spread the pudding over the bottom half of the cake and place the top layer over the pudding.  Pour Chocolate Glaze over the cake, allowing it to drip down the sides of the cake."@en,
+        "To make the Cake:  Heat oven to 350 degrees.  Line the bottom of an 8-inch round cake pan with parchment paper.  Butter and flour the sides of the pan."@en,
+        "To make the glaze:  When you are ready to assemble the cake make the glaze.  Heat the heavy cream to a boil.  Place the chocolate, butter and corn syrup in a medium size heatproof bowl and add he hot milk to it.  Let sit for 1 minute and stir until smooth.  Use while still warm to assemble the cake."@en,
+        "Transfer to the prepared pan and bake on the center shelf of the oven until the cake tests clean when a skewer is inserted into the center, 35-40 minutes.  Cool completely on a wire rack."@en,
+        "Whisk the yolks, cornstarch, sugar and salt together and stream the hot milk mixture, while whisking continuously, into the eggs.  Return to the pan and cook, while whisking over medium heat until the mixture thickens and just begins to boil.  Immediately transfer to a clean bowl.  Pick out and discard the vanilla bean.  Stir in the vanilla and the butter.  Press plastic wrap against the surface to cover.  Cool completely before assembling cake."@en ;
+    schema:recipeYield "10.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/336136> a schema:Recipe ;
+    schema:cookTime "PT1H"^^xsd:duration ;
+    schema:datePublished "2008-11-09T20:31:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Easy"@en,
+        "For Large Groups"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Vegetable"@en ;
+    schema:recipeIngredient "1 chicken bouillon granules"@en,
+        "1 diced tomatoes"@en,
+        "1 head of cabbage"@en,
+        "1 minced garlic clove"@en,
+        "1/2 pepper"@en,
+        "2 carrots"@en,
+        "2 celery"@en,
+        "2 green beans"@en,
+        "2 green peppers"@en,
+        "2 onions"@en,
+        "2 parsley flakes"@en ;
+    schema:recipeInstructions "\"Put everything in a large pot and bring to a boil.  Simmer till vegetables are to your liking.\""@en ;
+    schema:recipeYield "24.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/337283> a schema:Recipe ;
+    schema:cookTime "nan"^^xsd:duration ;
+    schema:datePublished "2008-11-14T18:39:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 15 Mins"@en,
+        "Citrus"@en,
+        "Easy"@en,
+        "Fruit"@en,
+        "Healthy"@en,
+        "Lemon"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en ;
+    schema:name "Best Lemonade"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Beverages"@en ;
+    schema:recipeInstructions "\"Use potato masher, mash lemon slices and sugar in deep bowl, until slices release their juice and sugar begins to dissolve.  Stir in water and lemon juice until sugar completely dissolves.  Strain out lemon slices and chill or pour over ice before serving.\""@en .
+
+<http://kg-course/food-nutrition/recipe/38> a schema:Product ;
+    schema:cookTime "P1D"^^xsd:duration ;
+    schema:datePublished "1999-08-09T21:46:00+00:00"^^xsd:dateTime ;
+    schema:description "Make and share this Low-Fat Berry Blue Frozen Dessert recipe from Food.com."@en ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/AFPDDHATWzQ0b1CDpDAT_255%20berry%20blue%20frzn%20dess.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/PeBMJN2TGSaYks2759BA_20140722_202142.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/UYgf9nwMT2SGGJCuzILO_228%20berry%20blue%20frzn%20dess.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/YUeirxMLQaeE1h3v3qnM_229%20berry%20blue%20frzn%20dess.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/pictzvxW5.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/38/picuaETeN.jpg> ;
+    schema:keywords "Dessert"@en,
+        "Easy"@en,
+        "Free Of..."@en,
+        "Freezer"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en,
+        "Summer"@en,
+        "Weeknight"@en ;
+    schema:name "Low-Fat Berry Blue Frozen Dessert"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/38/nutrition> ;
+    schema:prepTime "PT45M"^^xsd:duration ;
+    schema:recipeCategory "Frozen Desserts"@en ;
+    schema:recipeIngredient "1 lemon juice"@en,
+        "1 vanilla yogurt"@en,
+        "1/4 granulated sugar"@en,
+        "4 blueberries"@en ;
+    schema:recipeInstructions "Add yogurt and process until smooth."@en,
+        "Fold in remaining 2 cups of blueberries."@en,
+        "Let stand for 45 minutes, stirring occasionally."@en,
+        "Pour into plastic mold and freeze overnight. Let soften slightly to serve."@en,
+        "Return to pan and freeze until edges are solid."@en,
+        "Strain through fine sieve. Pour into baking pan (or transfer to ice cream maker and process according to manufacturers' directions]. Freeze uncovered until edges are solid but centre is soft.  Transfer to processor and blend until smooth again."@en,
+        "Toss 2 cups berries with sugar."@en,
+        "Transfer berry-sugar mixture to food processor."@en,
+        "Transfer to processor and blend until smooth again."@en ;
+    schema:recipeYield "4.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/39> a schema:Recipe ;
+    schema:cookTime "PT25M"^^xsd:duration ;
+    schema:datePublished "1999-08-29T13:12:00+00:00"^^xsd:dateTime ;
+    schema:description "Make and share this Biryani recipe from Food.com."@en ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/39/picHv4Ocr.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/39/picM9Mhnw.jpg> ;
+    schema:keywords "Asian"@en,
+        "Chicken"@en,
+        "Chicken Thigh & Leg"@en,
+        "Indian"@en,
+        "Meat"@en,
+        "Poultry"@en,
+        "Stove Top"@en,
+        "Weeknight"@en ;
+    schema:name "Biryani"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/39/nutrition> ;
+    schema:prepTime "PT4H"^^xsd:duration ;
+    schema:recipeCategory "Chicken Breast"@en ;
+    schema:recipeInstructions "Add chiles, onions, ginger, garlic, cloves, peppercorns, cardamom seeds, cinnamon, coriander and cumin seeds, poppy seeds, nutmeg, mace, cilantro or mint leaves and lemon juice. Blend into smooth paste. Put paste into large bowl, add yogurt and mix well."@en,
+        "Add reserved onion as garnish."@en,
+        "In same skillet, cook chicken with its marinade with tomatoes for about 10 minutes over medium heat, uncovered."@en,
+        "In skillet. heat oil over medium heat for 1 minute. Add ghee and 15 seconds later add onion and fry for about8 minutes."@en,
+        "Marinate chicken in yogurt mixture with salt, covered for at least 2 - 6 hours in refrigerator."@en,
+        "Place chicken, eggs and rice in large serving dish in such a way that yellow of the eggs, the saffron-colored rice, the nuts and the chicken make a colorful display."@en,
+        "Remove chicken pieces from the sauce and set aside. Add rice to sauce, bring to boil, and cook, covered over low heat for 15 minutes."@en,
+        "Reserve for garnish."@en,
+        "Return chicken and add raisins, cashews and almonds; mix well."@en,
+        "Simmer, covered for 5 minutes."@en,
+        "Soak saffron in warm milk for 5 minutes and puree in blender."@en ;
+    schema:recipeYield "6.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/40> a schema:Recipe ;
+    schema:cookTime "PT5M"^^xsd:duration ;
+    schema:datePublished "1999-09-05T19:52:00+00:00"^^xsd:dateTime ;
+    schema:description "This is from one of my  first Good House Keeping cookbooks.  You must use a *zester* in order to avoid getting any of that bitter rind, and when you zest the lemons, zest them onto some sugar from the recipe (the sugar will 'catch' all of the oils).  I also advise you from personal experience to use only the best skinned lemons for the best flavor."@en ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/pic23FWio.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/picJ4Sz3N.jpg> ;
+    schema:keywords "< 60 Mins"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en,
+        "Summer"@en ;
+    schema:name "Best Lemonade"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/40/nutrition> ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Beverages"@en ;
+    schema:recipeInstructions "Add lemon juice. Refrigerate until chilled."@en,
+        "Into a 1 quart Jar with tight fitting lid, put sugar and lemon peel, or zest;  add 1 1/2 cups very hot water (not from tap!]. With lid fitted firmly, shake jar until sugar is dissolved."@en,
+        "Stir to mix well."@en,
+        "Then add chilled club soda or, if you prefer, water."@en,
+        "To Serve: Into each 12-ounce glass, over ice cubes, pour 1/4 cup of the lemon syrup."@en ;
+    schema:recipeYield "4.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/406237> a schema:Recipe ;
+    schema:cookTime "PT25M"^^xsd:duration ;
+    schema:datePublished "2010-01-01T20:58:00+00:00"^^xsd:dateTime ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/7hOb04AMTjGwPBQWqqJJ_BCP%205%20-%20final_2.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/QVIYYHbJSA6q9cjxDoEO_BCP%204%20-%20final_1.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/dVhemJDSWuL4BNX6OjHh_BCP%207%20-%20final_4.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/pic5t5c4S.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/picGoKrT4.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/picIhX5AC.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/picJGCsT7.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/picJu59et.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/picN6PXQJ.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/picrBmSm8.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/40/62/37/pictylh59.jpg> ;
+    schema:keywords "< 4 Hours"@en,
+        "Freezer"@en,
+        "Kid Friendly"@en,
+        "Sweet"@en,
+        "Weeknight"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT1H"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/2 cornstarch"@en,
+        "1 egg"@en,
+        "1 sugar"@en,
+        "1 vanilla extract"@en,
+        "1 water"@en,
+        "1/2 salt"@en,
+        "1/3 milk"@en,
+        "1/4 salt"@en,
+        "1/4 sugar"@en,
+        "2 1/2 baking powder"@en,
+        "2 cake flour"@en,
+        "2 eggs"@en,
+        "2 milk"@en,
+        "2 sugar"@en ;
+    schema:recipeInstructions "Add egg yolks, oil and 1/2 cup milk to flour mixture.  With electric mixer, beat until smooth, scraping sides of bowl occasionally.  Add remaining 1/2 cup milk and vanilla.  Beat just until combined.  Carefully fold beaten egg whites into batter.  Divide batter into prepared pans."@en,
+        "Bake cakes 20 to 25 minutes or until centers spring back when gently pressed.  Cool in pans on wire rack for 5 minutes.  Loosen cake around edges with a sharp knife then turn cakes out onto racks and remove waxed paper, if used; cool completely.  (Tip:  I make the cake layers in advance, wrap and freeze.  Defrost in wrapper for a couple of hours then proceed with the filling and glaze.]."@en,
+        "For the cake layers:  Separate eggs; place whites in a small, clean bowl free of any grease or oil and set aside.  In a large mixing bowl, combine cake flour, 3/4 cup of the sugar, baking powder and salt.  Set aside."@en,
+        "Heat oven to 350 degrees.  Grease and flour two 9\" round cake pans or make it easy on yourself and trace the bottom of the cake pans on a piece of waxed paper and cut to fit then place on bottom of pans.  No need to grease;  the cakes will fall right out."@en,
+        "In a small bowl with an electric mixer, beat egg whites until soft peaks form.  Very gradually beat in the remaining 1/4 cup sugar; beat until stiff peaks form.  Set aside."@en,
+        "Make chocolate glaze:  In 1 quart saucepan, heat water and sugar to boiling.  Add chocolate chips; stir until glaze is smooth; remove from heat.  Cool 5 to 10 minutes or until slightly thickened."@en,
+        "To assemble, place one cake layer, upside down, on a serving plate.  Spread with cream filling.  Top with remaining cake layer, right side up.  Spoon glaze over top; spread to edges of cake.  Refrigerate."@en,
+        "When milk comes to boiling, gradually stir in cornstarch mixture with wire whisk.  Return to boiling, stirring constantly.  Reduce heat and simmer 1 minutes or until thickened to pudding consistancy.  Set aside to cool to room temperature."@en,
+        "While cake is baking, make cream filling:  In a 1-quart saucepan, heat 1 cup milk to boiling.  In cup or small bowl, combine remaining 1/2 cup milk, cornstarch, sugar, pinch salt, egg and vanilla until blended."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/41> a schema:Recipe ;
+    schema:cookTime "PT20M"^^xsd:duration ;
+    schema:datePublished "1999-09-03T14:54:00+00:00"^^xsd:dateTime ;
+    schema:description "This dish is best prepared a day in advance to allow the ingredients to soak in  the marinade overnight."@en ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/picL02w0s.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/41/picmbLig8.jpg> ;
+    schema:keywords "Beans"@en,
+        "Broil/Grill"@en,
+        "Low Cholesterol"@en,
+        "Oven"@en,
+        "Vegetable"@en,
+        "Weeknight"@en ;
+    schema:name "Carina's Tofu-Vegetable Kebabs"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/41/nutrition> ;
+    schema:prepTime "P1D"^^xsd:duration ;
+    schema:recipeCategory "Soy/Tofu"@en ;
+    schema:recipeIngredient "1 eggplant"@en,
+        "1 lemon juice"@en,
+        "1 low sodium soy sauce"@en,
+        "1 mushrooms"@en,
+        "1/2 mustard powder"@en,
+        "1/4 black pepper"@en,
+        "10 soy sauce"@en,
+        "12 extra firm tofu"@en,
+        "2 garlic cloves"@en,
+        "2 honey"@en,
+        "2 maple syrup"@en,
+        "2 red wine vinegar"@en,
+        "2 zucchini"@en,
+        "3 olive oil"@en ;
+    schema:recipeInstructions "Alternatively, put all ingredients in a glass jar, cover tightly with the lid  and shake well until mixed."@en,
+        "Broil or grill the kebabs at 450 F for 15-20 minutes, or on the grill, until the vegetables are browned."@en,
+        "Continue in this way until  all skewers are full."@en,
+        "Cut red pepper in half, removing stem and seeds, and cut each half into  one-inch squares."@en,
+        "Cut strips crosswise into one-inch cubes."@en,
+        "Cut tofu into one-inch squares."@en,
+        "Drain the tofu, carefully squeezing out excess water,  and pat dry with paper towels."@en,
+        "Lay the kebabs in a long, shallow baking pan or on  a non-metal tray, making sure they lie flat. Evenly pour the marinade over the  kebabs, turning them once so that the tofu and vegetables are coated."@en,
+        "Make the marinade by putting all ingredients in a  blender, and blend on high speed for about one minute until mixed."@en,
+        "Refrigerate the kebabs for three to eight hours, occasionally spooning the  marinade over them."@en,
+        "Set aside.  Cut  eggplant lengthwise in half, then cut each half into approximately three strips."@en,
+        "Slice zucchini into half-inch thick  slices."@en,
+        "Suggestions  This meal can be served over cooked, brown rice. Amounts can easily be doubled to make four servings."@en,
+        "Thread tofu and vegetables on to barbecue skewers in alternating color  combinations: For example, first a piece of eggplant, then a slice of tofu, then zucchini, then red pepper, baby corn and mushrooms."@en,
+        "Wipe mushrooms clean with a moist paper towel and remove  stems."@en ;
+    schema:recipeYield "2.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/416077> a schema:Recipe ;
+    schema:cookTime "PT15M"^^xsd:duration ;
+    schema:datePublished "2010-03-09T13:56:00+00:00"^^xsd:dateTime ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "< 60 Mins"@en ;
+    schema:recipeIngredient "1 cold water"@en,
+        "1 heavy whipping cream"@en,
+        "1/3 instant vanilla pudding"@en,
+        "2 sweetened condensed milk"@en ;
+    schema:recipeInstructions "Chill."@en,
+        "Cool."@en,
+        "Cut 2nd crust into and 8\" circle and cut the circle into 8 wedges."@en,
+        "Line a 9\" pie plate with one of the pie crusts, turn under edge and flute."@en,
+        "Meanwhile, in a large bowl, combine sweetened condensed milk and water.  Add pudding mix, beat well and chill for 5 minutes."@en,
+        "Melt chocolate chips with the crisco and drizzle over top of pie."@en,
+        "Place the wedges on ungreased cookie sheet and bake them along with the crust until lightly golden brown."@en,
+        "Pre-heat oven to 425 degrees."@en,
+        "Refrigerate leftovers."@en,
+        "Remove pudding mixture from the refridgerator and fold in the whipped cream."@en,
+        "Spoon mixture into prepared crust and top with crust wedges."@en,
+        "While pudding mixture is chilling, whip the whipped cream."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/42> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "1999-09-19T06:19:00+00:00"^^xsd:dateTime ;
+    schema:description "Cabbage can be boring but in this soup it is very tasty..the ground red pepper, etc..really enhances this soup !"@en,
+        "Make and share this Cabbage Soup recipe from Food.com."@en,
+        "This soup is SO good on a cold, wintry evening with a good, crusty bread or cornbread! Servings are approximate, depending on your appetite. This is wonderful to take to work for a hot lunch. You can also make this low salt by using reduced-salt canned goods."@en ;
+    schema:keywords "< 60 Mins"@en,
+        "Easy"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en,
+        "Vegan"@en,
+        "Winter"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/42/nutrition> ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "Meat"@en,
+        "Vegetable"@en ;
+    schema:recipeIngredient "1 celery"@en,
+        "1 onion"@en,
+        "2 carrots"@en,
+        "4 cabbage"@en,
+        "46 plain tomato juice"@en ;
+    schema:recipeInstructions "Mix everything together and bring to a boil."@en,
+        "Reduce heat and simmer for 30 minutes (longer if you prefer your veggies to be soft]."@en,
+        "Refrigerate until cool."@en,
+        "Serve chilled with sour cream."@en ;
+    schema:recipeYield "4.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/43> a schema:Recipe ;
+    schema:cookTime "PT2H"^^xsd:duration ;
+    schema:datePublished "1999-08-21T10:35:00+00:00"^^xsd:dateTime ;
+    schema:description "Make and share this Best Blackbottom Pie recipe from Food.com."@en ;
+    schema:keywords "< 4 Hours"@en,
+        "Dessert"@en,
+        "Stove Top"@en,
+        "Weeknight"@en ;
+    schema:name "Best Blackbottom Pie"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/43/nutrition> ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "Pie"@en ;
+    schema:recipeInstructions "Chill until set (about 2 hours]."@en,
+        "Chocolate Layer: In medium saucepan, combine sugar, cornstarch and salt.   Gradually stir in milk.  Cook over medium heat, stirring constantly, until   mixture boils.  Remove from heat. In small bowl, beat egg yolks. Gradually   stir in small amount of hot mixture; return to saucepan. Cook over low   heat, stirring constantly, for 2 minutes. Remove from heat."@en,
+        "Garnish with whipped cream and chocolate shavings, if desired."@en,
+        "Graham Cracker Crust: In small bowl, combine graham cracker crumbs, sugar   and butter.  Press evenly on bottom and sides of 9-inch pie plate. Chill   until firm (about 1 hour]."@en,
+        "In   1-1/2 quart bowl, combine egg whites and cream of tartar; beat until foamy.  Gradually add sugar; beat until stiff peaks form.  Fold egg whites into   custard; pour over chocolate layer."@en,
+        "Makes one   9-inch pie."@en,
+        "Pour into prepared Graham Cracker Crust; chill until set (about 30   minutes]."@en,
+        "Remove 1-1/2   cups custard to medium bowl; add  semi-sweet chocolate   morsels and vanilla extract. Stir until morsels are melted and mixture is   smooth."@en,
+        "Vanilla Layer: In large bowl, combine cold water and gelatin; let stand 5   minutes.  Add remaining warm custard; stir until gelatin dissolves.  Cool 15   minutes.  Stir in rum; beat with wire whisk until smooth. Set aside."@en,
+        "While Chocolate Layer is chilling, prepare Vanilla Layer."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/434130> a schema:Recipe ;
+    schema:cookTime "PT5M"^^xsd:duration ;
+    schema:datePublished "2010-08-03T16:58:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 30 Mins"@en,
+        "Easy"@en,
+        "For Large Groups"@en,
+        "From Scratch"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en,
+        "Summer"@en ;
+    schema:name "Best Lemonade"@en ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "Beverages"@en ;
+    schema:recipeIngredient "1 1/2 sugar"@en,
+        "1 1/2 water"@en,
+        "8 -12 lemons"@en ;
+    schema:recipeInstructions "Add zest to the sugar in the food processor and process for 10 seconds."@en,
+        "For the lemon syrup:."@en,
+        "In a medium saucepan, bring 1 1/2 cups water to a boil. Turn off the heat. Add the sugar mixture and stir until the sugar is dissolved. Add the strained lemon juice and stir."@en,
+        "Place the sugar into a food processor equipped with a steel blade."@en,
+        "Starting with the lemons you zested, squeeze them to get 1 1/2 cups of strained juice. Set juice aside."@en,
+        "To make a whole pitcher: Pour entire jar of syrup into large pitcher. Add 12 cups cold water or seltzer. Stir. Add ice cubes. Serve in tall glasses over ice."@en,
+        "To make single servings: Pour 1/4 cup of the lemon syrup into a tall glass. Add ice cubes and 3/4 cup cold water or seltzer water. Stir and enjoy."@en,
+        "Transfer mixture to a jar or container with a tight fitting lid and refrigerate until cold."@en,
+        "Using a microplane or a zester, remove the zest from at least one lemon being very careful to avoid any white pith. Measure out I tablespoon of zest. How many lemons are needed to reach one tablespoon depends on the size and variety of lemons you are using."@en ;
+    schema:recipeYield "16.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/44> a schema:Recipe ;
+    schema:cookTime "PT3M"^^xsd:duration ;
+    schema:datePublished "1999-09-17T04:47:00+00:00"^^xsd:dateTime ;
+    schema:description "I copied this one out of a friend's book so many moons ago that I can't remember where it's from, but it's so decadently fattening that I can't resist pigging out now and then.  I  usually serve with rice, but I suppose it would go with noodles or new potatoes  just as well."@en ;
+    schema:keywords "< 60 Mins"@en,
+        "Meat"@en,
+        "Poultry"@en ;
+    schema:name "Warm Chicken A La King"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/44/nutrition> ;
+    schema:prepTime "PT35M"^^xsd:duration ;
+    schema:recipeCategory "Chicken"@en ;
+    schema:recipeInstructions "Add celery, mushrooms, pepper, chicken and  pimiento to the sauce and heat through."@en,
+        "Gradually add milk and cook, stirring, until thick and smooth."@en,
+        "Melt 1 1/2 ozs butter, add the flour and cook for 2 to 3 minutes, stirring."@en,
+        "Melt the  remaining butter and saute sliced celery, button mushrooms and chopped pepper  until soft but not coloured."@en,
+        "Season to taste.  Combine the egg  yolks, double cream and Worcestershire sauce. Add to the chicken mixture and  heat through."@en,
+        "Transfer to a serving dish and sprinkle with chopped parsley."@en ;
+    schema:recipeYield "2.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/44395> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "2002-10-27T22:12:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Vegetable"@en ;
+    schema:recipeInstructions "**Ifyou are able to purchase an anise root, place in soup pot. Take out after vegetables are cooked."@en,
+        "Bring to a boil over high heat."@en,
+        "Place the broth and water in soup pot, add cabbage, celery, potatoes, onion and green pepper."@en,
+        "Reduce the heat, cover and simmer until the vegetables are tender."@en,
+        "Season to taste with the red pepper, ginger, black pepper, cinnamon and cloves."@en ;
+    schema:recipeYield "4.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/45> a schema:Recipe ;
+    schema:cookTime "PT50M"^^xsd:duration ;
+    schema:datePublished "1999-08-06T00:40:00+00:00"^^xsd:dateTime ;
+    schema:description "Make and share this Buttermilk Pie With Gingersnap Crumb Crust recipe from Food.com."@en ;
+    schema:keywords "< 4 Hours"@en,
+        "Dessert"@en,
+        "Healthy"@en,
+        "Oven"@en,
+        "Weeknight"@en ;
+    schema:name "Buttermilk Pie With Gingersnap Crumb Crust"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/45/nutrition> ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Pie"@en ;
+    schema:recipeIngredient "1 egg"@en,
+        "1 graham cracker crumbs"@en,
+        "1 margarine"@en,
+        "1/2 margarine"@en,
+        "1/4 buttermilk"@en,
+        "2 flour"@en,
+        "3 salt"@en,
+        "3/4 sugar"@en ;
+    schema:recipeInstructions "Bake 8 to 10 minutes or until edge of crust is lightly browned."@en,
+        "Combine graham crumbs, gingersnap crumbs, and margarine in 8 or 9 inch pie pan, pat mixture evenly on bottom and side of pan."@en,
+        "Cool on wire rack."@en,
+        "Make pie crust, using 8 inch pie pan, do not bake."@en,
+        "Mix sugar and margarine in medium bowl until blended; beat in egg whites and egg."@en,
+        "Pour filling into prepared crust, bake 40 minutes or until sharp knife inserted near center comes out clean."@en,
+        "Preheat oven to 350°F."@en,
+        "Sprinkle with nutmeg and serve warm or chilled."@en,
+        "Stir in flour, salt, and buttermilk until well blended."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/45881> a schema:Recipe ;
+    schema:cookTime "PT25M"^^xsd:duration ;
+    schema:datePublished "2002-11-13T20:03:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Dessert"@en,
+        "Oven"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Pie"@en ;
+    schema:recipeInstructions "Add 3 tablespoons of boiling water and blend well."@en,
+        "Add the confectioners' sugar and vanilla and stir until the mixture is crumbly."@en,
+        "Add the oil, 1/2 cup of the milk, and the vanilla and beat well, scraping the sides of the bowl from time to time."@en,
+        "Add the remaining 1/2 cup milk and the egg yolks and beat well."@en,
+        "Cover pan with waxed paper and let cool (do not stir]."@en,
+        "Divide the batter evenly between the two prepared pans and bake until cake tester comes out clean, about 25 minutes."@en,
+        "Gently fold in the egg white with a rubber spatula."@en,
+        "Gradually add about 2 more teaspoons of boiling water and stir to form a glaze of pouring consistency."@en,
+        "Gradually add the milk and stir until well blended."@en,
+        "Grease and flour two 9-inch round cake pans."@en,
+        "In a large mixing bowl, combine the four, the remaining 1 cup sugar, the baking powder and salt and mix well."@en,
+        "Keep the glaze hot over low heat."@en,
+        "Let the cakes cool for about 10 minutes, then turn out onto a wire rack to cool completely."@en,
+        "Let the\"pie\" cool completely before serving."@en,
+        "Over medium heat, cook until the mixture thickenes and comes to a boil, stirring constantly."@en,
+        "Preheat the oven to 350°F."@en,
+        "Remove from the heat, add the butter and vanilla and mix until well blended."@en,
+        "Remove from the heat."@en,
+        "Spread the cream filling evenly between the two cake layers, then pour the hot glaze over the top, spreading it evenly over the top and letting it drizzle down the sides."@en,
+        "To make the cake layers: Place the egg whites in a medium size mixing bowl and beat with electric mixer until soft peaks form, then gradually add 1/2 cup of the sugar, beating until very stiff peaks form."@en,
+        "To make the filling: Combine the sugar, flour and salt in a small heavy saucepan."@en,
+        "To make the glaze: Melt the chocolate and butter together in a small heavy saucepan over low heat, stirring constantly."@en,
+        "Very slowly, stir a little of the hot mixture into the beaten egg, then return the egg mixture to the pan and stir until the mixture boils."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/46> a schema:Recipe ;
+    schema:cookTime "nan"^^xsd:duration ;
+    schema:datePublished "1999-08-11T19:48:00+00:00"^^xsd:dateTime ;
+    schema:description "Make and share this A Jad - Cucumber Pickle recipe from Food.com."@en ;
+    schema:keywords "< 30 Mins"@en,
+        "Asian"@en,
+        "Free Of..."@en,
+        "Thai"@en ;
+    schema:name "A Jad - Cucumber Pickle"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/46/nutrition> ;
+    schema:prepTime "PT25M"^^xsd:duration ;
+    schema:recipeCategory "Vegetable"@en ;
+    schema:recipeIngredient "1/2 rice vinegar"@en,
+        "5 haeo"@en .
+
+<http://kg-course/food-nutrition/recipe/47> a schema:Recipe ;
+    schema:cookTime "PT9M"^^xsd:duration ;
+    schema:datePublished "1999-09-07T09:01:00+00:00"^^xsd:dateTime ;
+    schema:description "Make and share this Butter Pecan Cookies recipe from Food.com."@en ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/picCPvxZU.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/47/picfnmxck.jpg> ;
+    schema:keywords "< 4 Hours"@en,
+        "Cookie & Brownie"@en,
+        "Fruit"@en,
+        "Nuts"@en,
+        "Oven"@en,
+        "Weeknight"@en ;
+    schema:name "Butter Pecan Cookies"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/47/nutrition> ;
+    schema:prepTime "PT55M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 flour"@en,
+        "1 granulated sugar"@en,
+        "1 vanilla extract"@en,
+        "1/2 brown sugar"@en,
+        "2 pecan halves"@en,
+        "3/4 butter"@en ;
+    schema:recipeInstructions "Add unbeaten egg yolk and vanilla and beat well."@en,
+        "Bake at 350 degrees for 7-9 minutes, till golden brown (do not overbrown.] Cool before frosting."@en,
+        "Blend in sifted flour to form a stiff dough."@en,
+        "Cream butter in large mixing bowl."@en,
+        "Cream well."@en,
+        "Garnish with pecan halves."@en,
+        "Gradually add brown sugar and granulated sugar."@en,
+        "Place on greased cookie sheet. Flatten cookies with bottom of glass dipped in sugar."@en,
+        "Preheat oven to 350 degrees."@en,
+        "Shape dough into small balls."@en .
+
+<http://kg-course/food-nutrition/recipe/48> a schema:Recipe ;
+    schema:cookTime "nan"^^xsd:duration ;
+    schema:datePublished "1999-08-24T04:35:00+00:00"^^xsd:dateTime ;
+    schema:description "At least once in your life you should treat yourself to a real Boston Cream Pie. This recipe is worth all the necessary but easy steps, and makes a single 8\" cake which is cut into 2 layers, filled with custard and frosted with glossy chocolate. Cook time includes 45 minutes for cooling the cake and custard."@en,
+        "I don't know how this came to be called a pie. It is really a two-layer cake with a custard filling and chocolate glaze. It is a bit time consuming, but well worth the effort."@en,
+        "Make and share this Boston Cream Pie recipe from Food.com."@en,
+        "Recipe was adaped from a recipe printed in the newspaper. I added some short cuts for making this desert. Prep time does not include cooling time (30-45 minutes) for custard filling and cake."@en ;
+    schema:keywords "< 4 Hours"@en,
+        "Dessert"@en,
+        "Oven"@en,
+        "Weeknight"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:nutrition "cholesterol"  ;
+    schema:prepTime "PT2H15M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en,
+        "Pie"@en ;
+    schema:recipeIngredient "1 1/2 eggs"@en,
+        "1 1/2 flour"@en,
+        "1 1/2 sugar"@en,
+        "1 butter"@en,
+        "1 milk"@en,
+        "1 salt"@en,
+        "1 sugar"@en,
+        "1/2 margarine"@en,
+        "1/2 vanilla"@en,
+        "1/3 cornstarch"@en,
+        "1/3 vanilla"@en,
+        "1/4 vanilla"@en,
+        "2 1/4 cake flour"@en,
+        "2 milk"@en,
+        "3 baking powder"@en ;
+    schema:recipeInstructions "Add enough water (about 2 teaspoons], a teaspoon at a time, to form medium glaze of pouring consistency."@en,
+        "Add oil, half the  milk and vanilla."@en,
+        "Add remaining milk and egg yolks."@en,
+        "Add vanilla; cool."@en,
+        "Bake in two greased 9x 1.5-inch round pans in 350°F oven for 25 minutes."@en,
+        "Beat 1 minute at medium speed."@en,
+        "Beat 1 minute, scrape bowl."@en,
+        "Beat egg whites until soft peaks form."@en,
+        "Beat until smooth; fold in whipped cream."@en,
+        "Blend in 3 tablespoons boiling water."@en,
+        "Chocolate Glaze: Melt chocolate and butter over low heat, stirring constantly."@en,
+        "Cook and stir until mixture just boils."@en,
+        "Cook and stir until mixture thickens and boils; cook and stir 2-3 minutes longer."@en,
+        "Cool 10 minutes and then remove from pans."@en,
+        "Cool completely."@en,
+        "Fill with cream filling."@en,
+        "French Custard Filling: In saucepan, combine sugar, flour, cornstarch and salt.  Gradually stir in milk."@en,
+        "Frost with Chocolate Glaze."@en,
+        "Gently fold in egg whites."@en,
+        "Gradually add 1/2 cup sugar, beating until very stiff peaks form."@en,
+        "Pour quickly over top of cake; spread glaze evenly over top and sides."@en,
+        "Remove from heat. Stir in confectioners' sugar and vanilla until crumbly."@en,
+        "Sift together remaining dry ingredients into another bowl."@en,
+        "Stir a little of hot mixture into egg yolk; return to hot mixture."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/484928> a schema:Recipe ;
+    schema:cookTime "PT25M"^^xsd:duration ;
+    schema:datePublished "2012-08-06T13:51:00+00:00"^^xsd:dateTime ;
+    schema:keywords "\"< 60 Mins\""@en ;
+    schema:name "Biryani"@en ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "Indian"@en ;
+    schema:recipeInstructions "Add 4 cups of water to the rice. Mix saffron in milk and add to it."@en,
+        "Add cardamom powder. Add the chicken pieces."@en,
+        "Add the marinated chicken and cook for 10 minutes."@en,
+        "Garnish with green coriander leaves and serve hot."@en,
+        "Heat oil in a pan. Fry the onions until golden brown."@en,
+        "Marinate the chicken with this mixture and keep aside for 3-4 hours."@en,
+        "Mix tomato puree, yogurt, ginger garlic paste, green chilli paste, red chilli powder, turmeric powder, roasted cumin powder, garam masala, coriander powder and salt. Stir well."@en,
+        "Pressure cook the rice. Mix gently."@en ;
+    schema:recipeYield "4.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/48678> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "2002-12-13T20:05:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Easy"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Low Protein"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Vegetable"@en ;
+    schema:recipeInstructions "\"Simmer until cabbage is tender and enjoy.\""@en .
+
+<http://kg-course/food-nutrition/recipe/49> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "1999-08-14T19:58:00+00:00"^^xsd:dateTime ;
+    schema:description "Make and share this Chicken Breasts Lombardi recipe from Food.com."@en ;
+    schema:image <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/01477708512.jpeg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/01481162521.jpeg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/Sa0Yu0UyRoyh1B03oLnD_20161102_174049.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/X2b0bl8aTGivq4ErsD3g_Lombardi%20chicken%201.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/m1z1F8S5mAZgyImm5zYw_Lombardi%20Chicken%203.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/picvZU6rd.jpg>,
+        <https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/49/tHou0UsyTiAsfQo29Fpi_Lombardi%20Chicken%202.jpg> ;
+    schema:keywords "< 4 Hours"@en,
+        "Chicken"@en,
+        "European"@en,
+        "Meat"@en,
+        "Oven"@en,
+        "Poultry"@en,
+        "Very Low Carbs"@en,
+        "Weeknight"@en ;
+    schema:name "Chicken Breasts Lombardi"@en ;
+    schema:nutrition <http://example.org/nonexistent/Nutrition> ;
+    schema:prepTime "PT45M"^^xsd:duration ;
+    schema:recipeCategory "Chicken Breast"@en ;
+    schema:recipeIngredient "1/2 chicken broth"@en,
+        "1/2 flour"@en,
+        "1/2 mozzarella cheese"@en,
+        "1/2 parmesan cheese"@en,
+        "1/2 salt"@en,
+        "1/3 butter"@en,
+        "1/4 green onion"@en,
+        "12 boneless skinless chicken breast halves"@en,
+        "2 butter"@en,
+        "2 fresh mushrooms"@en,
+        "3/4 marsala"@en ;
+    schema:recipeInstructions "Add wine and  broth to skillet.  Bring to a boil;  reduce heat, and simmer,  uncovered, 10  minutes, stirring occasionally."@en,
+        "Bake  uncovered at 450 for 12 to 14 minutes."@en,
+        "Broil 5 1/2\" away from heat 1 to  2  minutes or until browned."@en,
+        "Combine cheeses and green  onions; sprinkle over chicken."@en,
+        "Cook mushrooms in 2 tbsp butter in a large  skillet, stirring constantly, just   until tender."@en,
+        "Dredge chicken pieces in flour."@en,
+        "Place 5 or 6  pieces of chicken in 1 to 2  tbsp butter in a  large skillet; cook over medium  heat 3 to 4 minutes on each  side or until  golden."@en,
+        "Place chicken in a lightly  greased 13x9\" baking dish,  overlapping  edges."@en,
+        "Pour  sauce over  chicken."@en,
+        "Remove from heat; set aside.  Cut each chicken breast half in  half lengthwise.   Place each piece of chicken  between two sheets of wax paper; flatten to  1/8\" thickness, using a meat  mallet or rolling pin."@en,
+        "Repeat procedure with  remaining chicken and butter."@en,
+        "Reserve pan  drippings in skillet.  Sprinkle  reserved mushrooms over chicken."@en,
+        "Stir in salt and pepper."@en ;
+    schema:recipeYield "6.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/510419> a schema:Recipe ;
+    schema:cookTime "PT6H"^^xsd:duration ;
+    schema:datePublished "2013-12-06T18:38:00+00:00"^^xsd:dateTime ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT10M"^^xsd:duration ;
+    schema:recipeCategory "Easy"@en ;
+    schema:recipeInstructions "Combine all ingredients except sour cream and cornstarch in slow cooker. Cover and cook on low 6-8 hours. Discard bay leaf."@en,
+        "Stir in combined sour cream and cornstarch, stirring until thickened, 2-3 minutes."@en ;
+    schema:recipeYield "6.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/520961> a schema:Recipe ;
+    schema:cookTime "PT30M"^^xsd:duration ;
+    schema:datePublished "2015-02-05T03:57:00+00:00"^^xsd:dateTime ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "< 60 Mins"@en ;
+    schema:recipeIngredient "0.5 white cabbage"@en,
+        "1 extra virgin olive oil"@en,
+        "1/2 celery"@en,
+        "1/2 fresh carrot"@en,
+        "1/2 frozen corn"@en,
+        "1/2 oregano"@en,
+        "1/2 salt"@en,
+        "1/2 yellow onion"@en,
+        "1/4 black pepper"@en,
+        "2 fresh green beans"@en,
+        "2 garlic cloves"@en,
+        "3 tomato paste"@en ;
+    schema:recipeInstructions "Add broth, tomato paste, cabbage, beans, and oregano."@en,
+        "Add corn. Bring back to a low simmer for 5-10 minutes."@en,
+        "Add salt and pepper, simmer for 5-10 minutes."@en,
+        "Enjoy!"@en,
+        "Saute garlic, onion, carrots and celery in olive on med-low heat until carrots and celery are soft. Be careful to not burn the garlic."@en,
+        "Simmer for 5-10 minutes."@en .
+
+<http://kg-course/food-nutrition/recipe/536304> a schema:Recipe ;
+    schema:cookTime "PT25M"^^xsd:duration ;
+    schema:datePublished "2018-07-13T19:54:00+00:00"^^xsd:dateTime ;
+    schema:keywords "\"< 4 Hours\""@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT1H"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 1/2 heavy cream"@en,
+        "1 2/3 baking powder"@en,
+        "1 3/4 flour"@en,
+        "1 3/4 sugar"@en,
+        "1 butter"@en,
+        "1 salt"@en,
+        "1/2 vanilla"@en,
+        "2 vanilla"@en,
+        "3 flour"@en,
+        "3/4 heavy cream"@en,
+        "3/4 milk"@en,
+        "4 eggs"@en,
+        "5 sugar"@en ;
+    schema:recipeInstructions "For the cake: In a bowl cream the butter and sugar. Add the eggs one at a time, beating well after each addition. Add the flour, baking powder and salt. Divide between the two baking pans. Bake for 25 minutes."@en,
+        "For the ganache: combine the heavy cream , butter, vanilla and chocolate in a double boiler. Stir until smooth and thickened."@en,
+        "For the pastry cream warm the milk and the heavy cream in a medium saucepan. In a large bowl whisk the egg yolks with the  sugar until creamy. Add the flour. Add the warm milk to the egg mixture and mix until smooth. Stir in the vanilla. Pour it all back into the saucepan and stir gently until the custard thickens. It should coat the back of a spoon. Remove from the heat. Press a piece of wax paper onto the surface of the custard and let cool in the refrigerator."@en,
+        "Lightly grease two 9 inch -baking pans and line the bases with parchment paper."@en,
+        "Preheat the oven to 350&deg;F."@en,
+        "To assemble the cake: Place one cake on your cake plate. Spread with the cold pastry cream . Top with the second cake and frost the top with the ganache."@en .
+
+<http://kg-course/food-nutrition/recipe/55724> a schema:Recipe ;
+    schema:cookTime "PT1H15M"^^xsd:duration ;
+    schema:datePublished "2003-03-06T20:01:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Stove Top"@en,
+        "Weeknight"@en,
+        "Winter"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT1H"^^xsd:duration ;
+    schema:recipeCategory "Meat"@en ;
+    schema:recipeInstructions "Add all 4 cans of beef broth, bring to a slow boil and cook for 10 minutes."@en,
+        "Add beans, salt, pepper, onion salt, dry mustard, Italian seasoning, and Emeril's Essence."@en,
+        "Add the can of Italian style tomatoes and cabbage; bring to a slow boil and simmer 20 minutes."@en,
+        "In Dutch oven, brown ground meat with chopped pepper, onions, and celery; drain off fat."@en,
+        "Simmer another 20 to 30 minutes; taste and adjust seasonings as necessary."@en .
+
+<http://kg-course/food-nutrition/recipe/57856> a schema:Recipe ;
+    schema:cookTime "PT25M"^^xsd:duration ;
+    schema:datePublished "2003-04-03T20:15:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Oven"@en,
+        "Refrigerator"@en,
+        "Weeknight"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT45M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 -3 milk"@en,
+        "1 1/2 baking powder"@en,
+        "1 1/2 margarine"@en,
+        "1 flour"@en,
+        "1 margarine"@en,
+        "1 vanilla"@en,
+        "1/2 confectioners' sugar"@en,
+        "1/3 milk"@en,
+        "1/4 cornstarch"@en,
+        "1/4 milk"@en,
+        "1/4 salt"@en,
+        "1/4 vanilla"@en,
+        "2 baking soda"@en,
+        "2 butter"@en,
+        "2 eggs"@en,
+        "2 salt"@en,
+        "3 sugar"@en,
+        "3/4 sugar"@en,
+        "6 butter"@en ;
+    schema:recipeInstructions "Bake for 25 minutes or until done."@en,
+        "Beat in sugar an milk with whisk until smooth."@en,
+        "Boil one minute then stir in vanilla."@en,
+        "Coat top of cake with chocolate glaze."@en,
+        "Cook until filling thickens and boils (20 minutes]."@en,
+        "Cool on rack for at 10 minutes before removing from pan."@en,
+        "Cover with custard filling."@en,
+        "Grease and flour a 9-inch round cake pan."@en,
+        "Let cool while making custard filling and chocolate glaze."@en,
+        "Make glaze while filling is cooling."@en,
+        "Mix all ingredients (flour-eggs] at low speed until combined, then mix at high speed for 2 minutes at high speed."@en,
+        "Place one layer cut side up on plate."@en,
+        "Place second layer (cut side down] over filling."@en,
+        "Pour in pan."@en,
+        "Refrigerate 30 minutes--cool but not completely set."@en,
+        "Remove from heat."@en,
+        "To assemble cake: Split cut in half horizontally (you now have two thin 9-inch layers]."@en,
+        "To make cake (if you want to buy a pre-made a 9-inch yellow round cake, you can omit steps 1-6] Preheat oven to 375-degrees F."@en,
+        "To make filling: Stir all filling ingredients except vanilla (milk-egg yolks] in a 2-quart saucepan over medium-low heat."@en,
+        "To make glaze: Melt chocolate and butter over low heat (or heat in microvave]."@en .
+
+<http://kg-course/food-nutrition/recipe/57879> a schema:Recipe ;
+    schema:cookTime "PT35M"^^xsd:duration ;
+    schema:datePublished "2003-04-03T20:16:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Weeknight"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT40M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeInstructions "(This tempers the egg yolks so they wont cook when you add them to the thickened milk.] Whisk in the egg yolks, and continue to cook and stir for another 4-5 minutes."@en,
+        "Add a little confectioners' sugar at a time, until you reach a disered consistency."@en,
+        "Add egg yolks and vanilla; beat until blended."@en,
+        "Alternately blend the dry ingredients and the milk into butter mixture in three stages."@en,
+        "Beat until smooth."@en,
+        "Cook over medium heat until very thick."@en,
+        "Cool 5 minutes in pans, then remove to wire racks and cool completely."@en,
+        "Cool, stirring occasionally."@en,
+        "Cover well, and refrigerate until ready to use."@en,
+        "Cream butter and slowly beat in sugar."@en,
+        "Drizzle over assembled cake."@en,
+        "Enjoy!"@en,
+        "Fold egg whites into cake batter."@en,
+        "For chocolate drizzle: Melt butter and chocolate in saucepan."@en,
+        "In a separate bowl, beat egg whites until stiff but not dry."@en,
+        "Meanwhile, prepare filling: Heat milk in pan until very hot, then briskly stir in sugar, flour and salt."@en,
+        "Preheat oven to 350*; butter and lightly flour two 8-inch round cake pans."@en,
+        "Remove from heat and add milk."@en,
+        "Remove from heat; add vanilla."@en,
+        "Sift flour, baking powder and salt onto wax paper."@en,
+        "Spoon a small amount of thickened milk into beaten egg yolks, and beat until blended."@en,
+        "Spoon batter into prepared cake pans; bake 30-35 minutes, or until toothpick comes out clean."@en .
+
+<http://kg-course/food-nutrition/recipe/58643> a schema:Recipe ;
+    schema:cookTime "PT15M"^^xsd:duration ;
+    schema:datePublished "2003-04-07T20:17:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 60 Mins"@en,
+        "Healthy"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 all-purpose flour"@en,
+        "1 butter"@en,
+        "1 milk"@en,
+        "1 vanilla"@en,
+        "1/2 icing sugar"@en,
+        "1/4 egg"@en,
+        "1/4 sugar"@en,
+        "2 milk"@en,
+        "2 water"@en ;
+    schema:recipeInstructions "Chill at least 1 hour before serving."@en,
+        "Cool well."@en,
+        "For filling: Heat milk (or light cream can be used for a richer taste] in heavy saucepan over medium heat to boiling."@en,
+        "Glaze: Beat all ingredients together adding a bir more liquid if necessary to make a barely pourable glaze."@en,
+        "Have cake layers ready."@en,
+        "If you like, allow a bit to dribble over sides."@en,
+        "Measure flour and sugar into small bowl."@en,
+        "Pour into milk, stirring while it boils and thickens."@en,
+        "Serve with whipped cream if desired."@en,
+        "Spread glaze over top only."@en,
+        "Stir in egg and vanilla."@en,
+        "Stir thoroughly."@en,
+        "To assemble, spread custard between cake layers."@en ;
+    schema:recipeYield "12.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/74837> a schema:Recipe ;
+    schema:cookTime "PT55M"^^xsd:duration ;
+    schema:datePublished "2003-11-01T20:00:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Brunch"@en,
+        "Healthy"@en,
+        "Inexpensive"@en,
+        "Kid Friendly"@en,
+        "Mixer"@en,
+        "Oven"@en,
+        "Small Appliance"@en,
+        "Stove Top"@en,
+        "Sweet"@en,
+        "Weeknight"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "45"^^xsd:int ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeIngredient "1 baking powder"@en,
+        "1 butter"@en,
+        "1 egg"@en,
+        "1 milk"@en,
+        "1 salt"@en,
+        "1 sugar"@en,
+        "1 unbleached flour"@en,
+        "1 vanilla"@en,
+        "1/2 cornstarch"@en,
+        "1/2 salt"@en,
+        "1/2 sugar"@en,
+        "1/2 unbleached flour"@en,
+        "1/2 vanilla"@en,
+        "1/4 vanilla"@en,
+        "2 butter"@en,
+        "2 eggs"@en,
+        "3 boiling water"@en,
+        "3 milk"@en ;
+    schema:recipeInstructions "Beat the egg whites until stiff in a large bowl; in a small bowl beat the egg yolks until light; add to the whites and beat together; slowly add the sugar, beating for 5 minutes."@en,
+        "Cake: Preheat oven to 350°; grease and flour an 8\" round cake pan."@en,
+        "Cool a bit, but while still warm, pour and spread frosting over the top of cake, allowing some to drip down sides if desired; there may be more frosting than you need, use it for another purpose."@en,
+        "Filling: In a double boiler over medium-low heat, cook sugar, flour, salt and milk for 15 minutes, stirring constantly until thickened and bubbly."@en,
+        "Frosting: Bring the sugar, cornstarch, chocolate, salt and water to a boil; cook, stirring, 3-5 minutes or until thickened enough to coat a spoon thickly; remove from heat, add butter and vanilla and stir until combined."@en,
+        "Pour batter into pan and bake 25-30 minutes, until toothpick tests clean; cool 10 minutes, remove from pan and cool completely on wire rack; slice the cake into two layers."@en,
+        "Sift the flour, baking powder and salt together; in a saucepan heat the milk and melt the butter."@en,
+        "Stir the dry ingredients and milk mixture into the egg mixture as quickly as possible; stir in vanilla and lemon extract if using."@en,
+        "Temper the egg with the cooked mixture and pour back into the pan; cook another 3-5 minutes until thickened; remove from heat, stir in vanilla or orange extract and cool completely with plastic wrap on custard surface; spread on bottom cake layer, add top layer."@en ;
+    schema:recipeYield "6.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/88095/> a schema:Recipe ;
+    schema:cookTime "PT2H"^^xsd:duration ;
+    schema:datePublished "1999-08-21T10:35:00+00:00"^^xsd:dateTime ;
+    schema:description "- Make and share this Best Blackbottom Pie recipe from Food.com."@en ;
+    schema:name "best blackbottom bie"@en ;
+    schema:nutrition <http://kg-course/food-nutrition/recipe/43/nutrition> ;
+    schema:prepTime "PT20M"^^xsd:duration ;
+    schema:recipeCategory "Pie"@en ;
+    schema:recipeInstructions "1. Chill until set (about 2 hours]."@en,
+        "2. Chocolate Layer: In medium saucepan, combine sugar, cornstarch and salt.   Gradually stir in milk.  Cook over medium heat, stirring constantly, until   mixture boils.  Remove from heat. In small bowl, beat egg yolks. Gradually   stir in small amount of hot mixture; return to saucepan. Cook over low   heat, stirring constantly, for 2 minutes. Remove from heat."@en,
+        "3. Garnish with whipped cream and chocolate shavings, if desired."@en,
+        "4. Graham Cracker Crust: In small bowl, combine graham cracker crumbs, sugar   and butter.  Press evenly on bottom and sides of 9-inch pie plate. Chill   until firm (about 1 hour]."@en,
+        "5. In   1-1/2 quart bowl, combine egg whites and cream of tartar; beat until foamy.  Gradually add sugar; beat until stiff peaks form.  Fold egg whites into   custard; pour over chocolate layer."@en,
+        "6. Makes one   9-inch pie."@en,
+        "7. Pour into prepared Graham Cracker Crust; chill until set (about 30   minutes]."@en,
+        "8. Remove 1-1/2   cups custard to medium bowl; add  semi-sweet chocolate   morsels and vanilla extract. Stir until morsels are melted and mixture is   smooth."@en,
+        "9. Vanilla Layer: In large bowl, combine cold water and gelatin; let stand 5   minutes.  Add remaining warm custard; stir until gelatin dissolves.  Cool 15   minutes.  Stir in rum; beat with wire whisk until smooth. Set aside."@en,
+        "10. While Chocolate Layer is chilling, prepare Vanilla Layer."@en ;
+    schema:recipeYield "8.0 servings"@en .    
+
+<http://kg-course/food-nutrition/recipe/88096> a schema:Recipe ;
+    schema:cookTime "PT1H30M"^^xsd:duration ;
+    schema:datePublished "2004-04-02T20:00:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Beginner Cook"@en,
+        "Easy"@en,
+        "European"@en,
+        "Inexpensive"@en,
+        "Kosher"@en,
+        "Meat"@en,
+        "Onions"@en,
+        "Vegetable"@en ;
+    schema:name "Cabbage Soup"@en ;
+    schema:prepTime "PT15M"^^xsd:duration ;
+    schema:recipeCategory "Clear Soup"@en ;
+    schema:recipeIngredient "1 cabbage"@en,
+        "1 coarse salt"@en,
+        "1 kosher salt"@en,
+        "1/2 - 3/4 tomato paste"@en,
+        "1/2 fresh ground pepper"@en,
+        "2 Italian plum tomatoes"@en,
+        "2 beef flank steak"@en,
+        "2 brown sugar"@en,
+        "2 onions"@en ;
+    schema:recipeInstructions "Add the onions and tomatoes, squeezing them with your hands as you put them into the pot to break them up."@en,
+        "Be careful <U+0096> they tend to spit."@en,
+        "Bring to a boil and skim off the foam that will rise to the top."@en,
+        "Cook for about 20 minutes, taste& adjust for seasoning."@en,
+        "Cover and cook over low heat for 1 hour."@en,
+        "Put the meat and bones into a stockpot with enough cold water to cover, plus an inch."@en,
+        "Stir in the cabbage, salt, and pepper and cover and cook for 1 hour."@en,
+        "Stir in the lemon juice, brown sugar, and tomato paste."@en ;
+    schema:recipeYield "8.0 servings"@en .
+
+<http://kg-course/food-nutrition/recipe/98664> a schema:Recipe ;
+    schema:cookTime "PT40M"^^xsd:duration ;
+    schema:datePublished "2004-08-27T19:59:00+00:00"^^xsd:dateTime ;
+    schema:keywords "< 4 Hours"@en,
+        "Healthy"@en,
+        "Low Cholesterol"@en,
+        "Oven"@en ;
+    schema:name "Boston Cream Pie"@en ;
+    schema:prepTime "PT30M"^^xsd:duration ;
+    schema:recipeCategory "Dessert"@en ;
+    schema:recipeInstructions "Add to margarine mixture alternately with milk, beginning and ending with flour mixture."@en,
+        "Bake at 350F for 35 minutes or until a wooden pick inserted in center comes out clean."@en,
+        "Beat egg whites at high speed until foamy."@en,
+        "Beat margarine at high speed with an electric mixer until creamy; gradually add 1/2 cup sugar, beating well (about 5 minutes]."@en,
+        "Bring to a boil over medium heat, and cook 1 minute, stirring constantly."@en,
+        "CHOCOLATE GLAZE: Combine sugar, cocoa, and cornstarch in a small saucepan."@en,
+        "Chill 3 hours."@en,
+        "Combine flour, baking powder, and salt."@en,
+        "Cool in pan on wire rack 5 minutes; remove from pan, and cool completely on wire rack."@en,
+        "Cover pan and chill until set."@en,
+        "Gradually add milk, stirring until well blended."@en,
+        "Gradually add remaining 3T sugar, beating until stiff peaks form."@en,
+        "Makes 1 1/2 cups."@en,
+        "Pour into an 8-inch round cake pan coated with cooking spray."@en,
+        "Split cake in half horizontally; place bottom layer, cut side up, on a serving plate."@en,
+        "Spread Chocolate Glaze over top of cake."@en,
+        "Spread with Vanilla Cream Filling; top with remaining cake layer, cut side down."@en,
+        "Stir in vanilla."@en,
+        "Stir one-third of egg white mixture into batter; fold remaining egg white mixture into batter."@en,
+        "VANILLA CREAM FILLING: Combine first 5 ingredients in a saucepan, stirring with a wire whisk until blended."@en ;
+    schema:recipeYield "10.0 servings"@en .
+
+
+<http://kg-course/food-nutrition/recipe/38/nutrition> schema:calories 1.709e+02 ;
+    schema:carbohydrateContent 3.71e+01 ;
+    schema:cholesterolContent 8e+00 ;
+    schema:fatContent 2.5e+00 ;
+    schema:fiberContent 3.6e+00 ;
+    schema:proteinContent 3.2e+00 ;
+    schema:saturatedFatContent 1.3e+00 ;
+    schema:sodiumContent 2.98e+01 ;
+    schema:sugarContent 3.02e+01 .
+
+<http://kg-course/food-nutrition/recipe/39/nutrition> schema:calories 1.1107e+03 ;
+    schema:carbohydrateContent 8.44e+01 ;
+    schema:cholesterolContent 3.728e+02 ;
+    schema:fatContent 5.88e+01 ;
+    schema:fiberContent 9e+00 ;
+    schema:proteinContent 6.34e+01 ;
+    schema:saturatedFatContent 1.66e+01 ;
+    schema:sodiumContent 3.684e+02 ;
+    schema:sugarContent 2.04e+01 .
+
+<http://kg-course/food-nutrition/recipe/40/nutrition> schema:calories 3.111e+02 ;
+    schema:carbohydrateContent 8.15e+01 ;
+    schema:cholesterolContent 0e+00 ;
+    schema:fatContent 2e-01 ;
+    schema:fiberContent 4e-01 ;
+    schema:proteinContent 3e-01 ;
+    schema:saturatedFatContent 0e+00 ;
+    schema:sodiumContent 1.8e+00 ;
+    schema:sugarContent 7.72e+01 .
+
+<http://kg-course/food-nutrition/recipe/41/nutrition> schema:calories 5.361e+02 ;
+    schema:carbohydrateContent 6.42e+01 ;
+    schema:cholesterolContent 0e+00 ;
+    schema:fatContent 2.4e+01 ;
+    schema:fiberContent -0.2 ;
+    schema:proteinContent 2.93e+01 ;
+    schema:saturatedFatContent 3.8e+00 ;
+    schema:sodiumContent 1.5586e+03 ;
+    schema:sugarContent 3.21e+01 .
+
+<http://kg-course/food-nutrition/recipe/42/nutrition> schema:calories 7.29e+01,
+        1.036e+02,
+        1.84e+02,
+        2.511e+02 ;
+    schema:carbohydrateContent 1.25e+01,
+        2.51e+01,
+        3.1e+01,
+        4.24e+01 ;
+    schema:cholesterolContent 0e+00,
+        5e-01,
+        2.46e+01 ;
+    schema:fatContent 4e-01,
+        9e-01,
+        1.2e+00,
+        5.6e+00 ;
+    schema:fiberContent 2.8e+00,
+        4.8e+00,
+        "0.2",
+        1.1e+01 ;
+    schema:proteinContent 4.2e+00,
+        4.3e+00,
+        7e+00,
+        2.01e+01 ;
+    schema:saturatedFatContent 1e-01,
+        2e-01,
+        2.1e+00 ;
+    schema:sodiumContent 4.052e+02,
+        9.593e+02,
+        1.4885e+03,
+        1.7656e+03 ;
+    schema:sugarContent 3.5e+00,
+        8.3e+00,
+        1.77e+01,
+        3.15e+01 .
+
+<http://kg-course/food-nutrition/recipe/43/nutrition> schema:calories 4.379e+02 ;
+    schema:carbohydrateContent 5.8e+01 ;
+    schema:cholesterolContent 9.43e+01 ;
+    schema:fatContent 1.93e+01 ;
+    schema:fiberContent 1.8e+00 ;
+    schema:proteinContent 7e+00 ;
+    schema:saturatedFatContent 1.09e+01 ;
+    schema:sodiumContent 2.676e+02 ;
+    schema:sugarContent 4.25e+01 .
+
+<http://kg-course/food-nutrition/recipe/44/nutrition> schema:calories 8.955e+02 ;
+    schema:carbohydrateContent 2.91e+01 ;
+    schema:cholesterolContent 4.058e+02 ;
+    schema:fatContent 6.68e+01 ;
+    schema:fiberContent 3.1e+00 ;
+    schema:proteinContent 4.53e+01 ;
+    schema:saturatedFatContent 3.19e+01 ;
+    schema:sodiumContent 5.572e+02 ;
+    schema:sugarContent 5e+00 .
+
+<http://kg-course/food-nutrition/recipe/45/nutrition> schema:calories 2.28e+02 ;
+    schema:carbohydrateContent 3.75e+01 ;
+    schema:cholesterolContent 2.45e+01 ;
+    schema:fatContent 7.1e+00 ;
+    schema:fiberContent 5e-01 ;
+    schema:proteinContent -4.2e+00 ;
+    schema:saturatedFatContent 1.7e+00 ;
+    schema:sodiumContent 2.818e+02 ;
+    schema:sugarContent 2.47e+01 .
+
+<http://kg-course/food-nutrition/recipe/46/nutrition> schema:calories 4.3e+00 ;
+    schema:carbohydrateContent 1.1e+00 ;
+    schema:cholesterolContent 0e+00 ;
+    schema:fatContent 0e+00 ;
+    schema:fiberContent 2e-01 ;
+    schema:proteinContent 1e-01 ;
+    schema:saturatedFatContent 0e+00 ;
+    schema:sodiumContent 7e-01 ;
+    schema:sugarContent 2e-01 ;
+    a dbo:Nutrition .
+
+<http://kg-course/food-nutrition/recipe/47/nutrition> schema:calories 6.9e+01 ;
+    schema:carbohydrateContent 4.5e+00 ;
+    schema:cholesterolContent 6.3e+00 ;
+    schema:fatContent 5.6e+00 ;
+    schema:fiberContent 6e-01 ;
+    schema:proteinContent 8e-01 ;
+    schema:saturatedFatContent 1.4e+00 ;
+    schema:sodiumContent 1.5e+01 ;
+    schema:sugarContent 1.6e+00 .
+
+<http://kg-course/food-nutrition/recipe/48/nutrition> schema:calories 3.599e+02,
+        4.995e+02,
+        5.877e+02,
+        6.261e+02,
+        6.882e+02,
+        3.204e+03 ;
+    schema:carbohydrateContent 5.99e+01,
+        6.75e+01,
+        8.4e+01,
+        1.027e+02,
+        1.119e+02,
+        4.26e+02 ;
+    schema:cholesterolContent 2.45e+01,
+        1.004e+02,
+        1.059e+02,
+        1.117e+02,
+        1.537e+02,
+        1.0961e+03 ;
+    schema:fatContent 1.14e+01,
+        1.36e+01,
+        2.1e+01,
+        2.3e+01,
+        3.64e+01,
+        1.51e+02 ;
+    schema:fiberContent 8e-01,
+        1.2e+00,
+        1.6e+00,
+        1.9e+00,
+        2.3e+00,
+        1.3e+01 ;
+    schema:proteinContent 5.6e+00,
+        7.4e+00,
+        8.8e+00,
+        8.9e+00,
+        9.3e+00,
+        5.78e+01 ;
+    schema:saturatedFatContent 3.6e+00,
+        7.7e+00,
+        7.9e+00,
+        1.29e+01,
+        1.37e+01,
+        8.9e+01 ;
+    schema:sodiumContent 2.645e+02,
+        3.135e+02,
+        3.63e+02,
+        5.471e+02,
+        7.223e+02,
+        3.0554e+03 ;
+    schema:sugarContent 3.79e+01,
+        4.02e+01,
+        4.62e+01,
+        6.83e+01,
+        8.36e+01,
+        2.618e+02 .
+
+<http://kg-course/food-nutrition/recipe/49/nutrition> schema:calories "6.277e+02" ;
+    schema:carbohydrateContent 1.37e+01 ;
+    schema:cholesterolContent 2.03e+02 ;
+    schema:fatContent 2.49e+01 ;
+    schema:fiberContent 6e-01 ;
+    schema:proteinContent 5.79e+01 ;
+    schema:saturatedFatContent 1.3e+01 ;
+    schema:sodiumContent 8.489e+02 ;
+    schema:sugarContent 2e+00 .
+

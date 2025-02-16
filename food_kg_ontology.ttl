@@ -1,0 +1,113 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+
+
+# Recipe as an OWL Class
+schema:Recipe a owl:Class ;
+    rdfs:label "Recipe"@en ;
+    rdfs:comment "A recipe is a set of instructions that describes how to prepare or make something, especially a culinary dish."@en ;
+    rdfs:subClassOf schema:CreativeWork .
+
+schema:recipeIngredient a owl:ObjectProperty ;
+    rdfs:label "recipeIngredient"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .    
+
+# Define relevant properties with domain and range
+schema:name a owl:DatatypeProperty ;
+    rdfs:label "name"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:cookTime a owl:DatatypeProperty ;
+    rdfs:label "cookTime"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:duration .
+
+schema:prepTime a owl:DatatypeProperty ;
+    rdfs:label "prepTime"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:duration .
+
+schema:recipeCategory a owl:DatatypeProperty ;
+    rdfs:label "recipeCategory"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:recipeInstructions a owl:DatatypeProperty ;
+    rdfs:label "recipeInstructions"@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range xsd:string .
+
+schema:NutritionInformation a owl:Class ;
+    rdfs:label "Nutrition Information"@en ;
+    rdfs:comment "Nutritional information about a recipe, including calories, fat, protein, and carbohydrates."@en .
+
+schema:nutrition a owl:ObjectProperty ;
+    rdfs:label "nutrition"@en ;
+    rdfs:comment "Nutritional information for a recipe."@en ;
+    rdfs:domain schema:Recipe ;
+    rdfs:range schema:NutritionInformation .
+
+schema:calories a owl:DatatypeProperty ;
+    rdfs:label "calories"@en ;
+    rdfs:comment "Total energy provided by the recipe in kcal."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:fatContent a owl:DatatypeProperty ;
+    rdfs:label "fatContent"@en ;
+    rdfs:comment "Amount of fat in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:saturatedFatContent a owl:DatatypeProperty ;
+    rdfs:label "saturatedFatContent"@en ;
+    rdfs:comment "Amount of saturated fat in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:cholesterolContent a owl:DatatypeProperty ;
+    rdfs:label "cholesterolContent"@en ;
+    rdfs:comment "Amount of cholesterol in milligrams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:sodiumContent a owl:DatatypeProperty ;
+    rdfs:label "sodiumContent"@en ;
+    rdfs:comment "Amount of sodium in milligrams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:carbohydrateContent a owl:DatatypeProperty ;
+    rdfs:label "carbohydrateContent"@en ;
+    rdfs:comment "Amount of carbohydrates in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:fiberContent a owl:DatatypeProperty ;
+    rdfs:label "fiberContent"@en ;
+    rdfs:comment "Amount of fiber in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:sugarContent a owl:DatatypeProperty ;
+    rdfs:label "sugarContent"@en ;
+    rdfs:comment "Amount of sugar in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+schema:proteinContent a owl:DatatypeProperty ;
+    rdfs:label "proteinContent"@en ;
+    rdfs:comment "Amount of protein in grams."@en ;
+    rdfs:domain schema:NutritionInformation ;
+    rdfs:range xsd:double .
+
+dbo:Nutrition a owl:Class ;
+    rdfs:label "Nutrition"@en ;
+    rdfs:comment "Nutrition-related information such as calories, fat content, and protein."@en .
