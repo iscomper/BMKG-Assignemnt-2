@@ -1,0 +1,8 @@
+SELECT ?recipe ?ingredient ?cleanedIngredient ?instruction
+WHERE {
+    ?recipe a schema:Recipe;
+        schema:recipeIngredient ?ingredient;
+        schema:recipeInstructions ?instruction.   
+    BIND(REPLACE(?ingredient, ".*[0-9]+", "") AS ?cleanedIngredient)
+    filter contains(?instruction,?cleanedIngredient)      
+}
