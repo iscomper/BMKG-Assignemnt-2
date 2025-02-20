@@ -1,0 +1,7 @@
+SELECT ?recipe ?cookTime
+WHERE {
+  ?recipe schema:cookTime ?cookTime .
+  FILTER (
+    !regex(str(?cookTime), "^P([T0-9HMSD]+)$") || str(?cookTime) = "nan"
+  )
+}

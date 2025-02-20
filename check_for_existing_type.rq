@@ -1,0 +1,5 @@
+SELECT ?entity
+WHERE {
+    ?entity ?p ?o .
+    FILTER NOT EXISTS { ?entity rdf:type ?type }
+}

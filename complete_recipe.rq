@@ -1,0 +1,13 @@
+SELECT ?recipe
+WHERE {
+    ?recipe a schema:Recipe.
+
+    FILTER (
+        !EXISTS { ?recipe schema:recipeIngredient ?ingredient } ||
+        !EXISTS { ?recipe schema:recipeInstructions ?instructions } ||
+        !EXISTS { ?recipe schema:name ?name } ||
+        STRLEN(STR(?ingredient)) = 0 ||
+        STRLEN(STR(?instructions)) = 0 ||
+        STRLEN(STR(?name)) = 0
+    )
+}

@@ -1,0 +1,9 @@
+SELECT ?recipe ?type
+WHERE {
+    ?recipe schema:prepTime ?prepTime;
+            schema:recipeCategory ?recipeCategory;
+            schema:name ?name.
+    OPTIONAL { ?recipe a ?type }
+
+    FILTER (!BOUND(?type) || ?type != schema:Recipe)
+}

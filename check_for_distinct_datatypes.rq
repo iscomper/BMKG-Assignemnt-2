@@ -1,0 +1,6 @@
+SELECT ?nutrition (IF(isLiteral(?nutrition), datatype(?nutrition), IRI(?nutrition)) AS ?datatype)
+WHERE {
+  ?instance a schema:Recipe .
+  ?instance schema:nutrition ?nutrition .
+}
+GROUP BY ?nutrition
