@@ -1,0 +1,8 @@
+SELECT ?recipe ?keyword (COUNT(?keyword) AS ?count_keyword)
+WHERE {
+    ?recipe a schema:Recipe ;
+     schema:keywords ?keyword.
+
+}
+GROUP BY ?recipe ?keyword
+HAVING (COUNT(?keyword) > 1)  # Only show duplicates

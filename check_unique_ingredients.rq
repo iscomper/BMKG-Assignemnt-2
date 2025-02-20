@@ -1,0 +1,8 @@
+SELECT ?recipe ?ingredient (COUNT(?ingredient) AS ?count_ingredient)
+WHERE {
+    ?recipe a schema:Recipe ;
+     schema:recipeIngredient ?ingredient.
+
+}
+GROUP BY ?recipe ?ingredient
+HAVING (COUNT(?ingredient) > 1)  # Only show duplicates
