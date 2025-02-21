@@ -1,0 +1,21 @@
+SELECT ?nutritionNode ?property (COUNT(?value) AS ?valueCount)
+WHERE {
+  VALUES ?nutritionNode { <http://kg-course/food-nutrition/recipe/42/nutrition> }
+
+  ?nutritionNode ?property ?value .
+  FILTER (
+    ?property IN (
+      schema:calories,
+      schema:carbohydrateContent,
+      schema:cholesterolContent,
+      schema:fatContent,
+      schema:fiberContent,
+      schema:proteinContent,
+      schema:saturatedFatContent,
+      schema:sodiumContent,
+      schema:sugarContent
+    )
+  )
+}
+GROUP BY ?nutritionNode ?property
+HAVING (COUNT(?value) > 1)

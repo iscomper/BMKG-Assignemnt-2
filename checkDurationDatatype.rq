@@ -1,0 +1,9 @@
+SELECT ?recipe ?property ?duration (DATATYPE(?duration) AS ?datatype)
+WHERE {
+  ?recipe a schema:Recipe ;
+          ?property ?duration .
+  FILTER (
+    (?property IN (schema:cookTime, schema:prepTime)) &&
+    ( !isLiteral(?duration) || DATATYPE(?duration) != xsd:duration )
+  )
+}

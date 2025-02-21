@@ -1,0 +1,8 @@
+SELECT ?subject ?value
+WHERE {
+  ?subject schema:keywords ?value .
+  FILTER (
+    isLiteral(?value) &&
+    regex(str(?value), "^\\\\\\\"<") 
+  )
+}

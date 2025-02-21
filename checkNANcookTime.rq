@@ -1,0 +1,5 @@
+SELECT ?subject ?cookTime
+WHERE {
+  ?subject schema:cookTime ?cookTime .
+  FILTER (regex(str(?cookTime), "nan", "i")) 
+}

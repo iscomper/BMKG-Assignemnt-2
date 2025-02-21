@@ -1,0 +1,10 @@
+SELECT ?recipe ?property ?value
+WHERE {
+  ?recipe a schema:Recipe ;
+          schema:nutrition ?nutrition .
+  ?nutrition ?property ?value .
+  FILTER (
+    (?property IN (schema:proteinContent, schema:fiberContent)) &&
+    (isLiteral(?value) && regex(str(?value), "^-"))
+  )
+}

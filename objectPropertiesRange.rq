@@ -1,0 +1,6 @@
+SELECT ?property ?range
+WHERE {
+  ?property a owl:ObjectProperty ;
+            rdfs:range ?range .
+  FILTER NOT EXISTS { ?range a owl:Class . }
+}
