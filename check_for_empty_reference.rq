@@ -1,7 +1,6 @@
 SELECT DISTINCT ?nutrition
 WHERE {
   ?subject schema:nutrition ?nutrition .
-  # Check if there are no other triples describing ?nutrition.
   FILTER NOT EXISTS {
     ?nutrition ?p ?o .
   }
