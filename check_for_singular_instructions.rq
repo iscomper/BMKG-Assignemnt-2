@@ -1,0 +1,6 @@
+SELECT ?recipe (SAMPLE(?instruction) AS ?singleInstruction)
+WHERE {
+  ?recipe schema:recipeInstructions ?instruction .
+}
+GROUP BY ?recipe
+HAVING (COUNT(?instruction) = 1)

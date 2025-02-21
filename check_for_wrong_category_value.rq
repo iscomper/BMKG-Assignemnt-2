@@ -1,0 +1,10 @@
+SELECT ?recipe ?category
+WHERE {
+  ?recipe a schema:Recipe ;
+          schema:recipeCategory ?category .
+  FILTER regex(
+    str(?category),
+    "\\b\\d+\\s*(?:hours?|minutes?|mins?|seconds?|days?)\\b",
+    "i"
+  )
+}
