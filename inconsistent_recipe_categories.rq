@@ -1,0 +1,8 @@
+SELECT ?foodName (COUNT(DISTINCT ?category) AS ?distinctCategories) (GROUP_CONCAT(DISTINCT ?category; SEPARATOR=", ") AS ?categories)
+WHERE {
+  ?recipe a schema:Recipe ;
+          schema:name ?foodName ;
+          schema:recipeCategory ?category .
+}
+GROUP BY ?foodName
+LIMIT 5

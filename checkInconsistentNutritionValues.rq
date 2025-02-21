@@ -19,3 +19,4 @@ WHERE {
 }
 GROUP BY ?nutritionNode ?property
 HAVING (COUNT(?value) > 1)
+LIMIT 5

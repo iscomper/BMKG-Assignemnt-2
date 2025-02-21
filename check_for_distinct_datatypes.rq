@@ -4,3 +4,4 @@ WHERE {
   ?instance schema:nutrition ?nutrition .
 }
 GROUP BY ?nutrition
+LIMIT 5
