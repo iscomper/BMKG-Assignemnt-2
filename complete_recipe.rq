@@ -11,3 +11,4 @@ WHERE {
         STRLEN(STR(?name)) = 0
     )
 }
+LIMIT 5
