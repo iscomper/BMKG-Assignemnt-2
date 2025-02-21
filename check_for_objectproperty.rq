@@ -1,0 +1,8 @@
+SELECT ?property
+WHERE {
+  ?property a owl:ObjectProperty .
+  MINUS {
+    ?s ?property ?o .
+    FILTER (!isLiteral(?o))
+  }
+}
